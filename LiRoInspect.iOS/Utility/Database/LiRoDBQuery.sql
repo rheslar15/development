@@ -1,0 +1,1758 @@
+BEGIN TRANSACTION;
+CREATE TABLE "options" (
+	`OptionsId`	int NOT NULL,
+	`OptionsDesc`	varchar(255) NOT NULL,
+	`priority`	int,
+	PRIMARY KEY(OptionsId)
+);
+INSERT INTO `options` VALUES (1,'General',NULL);
+INSERT INTO `options` VALUES (2,'Grading',NULL);
+INSERT INTO `options` VALUES (3,'Backfill',NULL);
+INSERT INTO `options` VALUES (4,'Flatwork',NULL);
+INSERT INTO `options` VALUES (5,'Gas',NULL);
+INSERT INTO `options` VALUES (6,'Water',NULL);
+INSERT INTO `options` VALUES (7,'Electric',NULL);
+INSERT INTO `options` VALUES (8,'Sewer',NULL);
+INSERT INTO `options` VALUES (9,'Piles',NULL);
+INSERT INTO `options` VALUES (10,'Piers',NULL);
+INSERT INTO `options` VALUES (11,'Pier & Beam',NULL);
+INSERT INTO `options` VALUES (12,'Porch/Landing/Stair Framing',NULL);
+INSERT INTO `options` VALUES (13,'Floor Structural Framing',NULL);
+INSERT INTO `options` VALUES (14,'Demolition',NULL);
+INSERT INTO `options` VALUES (15,'Ramp',NULL);
+INSERT INTO `options` VALUES (16,'Lift',NULL);
+INSERT INTO `options` VALUES (17,'Roof',NULL);
+INSERT INTO `options` VALUES (18,'Fascia',NULL);
+INSERT INTO `options` VALUES (19,'Soffit',NULL);
+INSERT INTO `options` VALUES (20,'Siding',NULL);
+INSERT INTO `options` VALUES (21,'Wall Framing',NULL);
+INSERT INTO `options` VALUES (22,'Roof Framing',NULL);
+INSERT INTO `options` VALUES (23,'Roofing',NULL);
+INSERT INTO `options` VALUES (24,'Doors',NULL);
+INSERT INTO `options` VALUES (25,'Windows',NULL);
+INSERT INTO `options` VALUES (26,'Porch',NULL);
+INSERT INTO `options` VALUES (27,'Stair',NULL);
+INSERT INTO `options` VALUES (28,'Weatherization',NULL);
+INSERT INTO `options` VALUES (29,'Gutters & Downspouts',NULL);
+INSERT INTO `options` VALUES (30,'Paint',NULL);
+INSERT INTO `options` VALUES (31,'Mechanical - rough',NULL);
+INSERT INTO `options` VALUES (32,'Mechanical - trim',NULL);
+INSERT INTO `options` VALUES (33,'Electrical - rough',NULL);
+INSERT INTO `options` VALUES (34,'Electrical  - trim',NULL);
+INSERT INTO `options` VALUES (35,'Plumbing - rough',NULL);
+INSERT INTO `options` VALUES (36,'Plumbing - trim',NULL);
+INSERT INTO `options` VALUES (37,'Appliances',NULL);
+INSERT INTO `options` VALUES (38,'DOB Progress Inspections',NULL);
+INSERT INTO `options` VALUES (39,'DEP',NULL);
+INSERT INTO `options` VALUES (40,'Special Inspection',NULL);
+INSERT INTO `options` VALUES (41,'Floor Covering',NULL);
+INSERT INTO `options` VALUES (42,'Finish Details',NULL);
+INSERT INTO `options` VALUES (43,'Cabinets & Countertops',NULL);
+INSERT INTO `options` VALUES (44,'Interior Surface',NULL);
+INSERT INTO `options` VALUES (45,'Finish Carpentry',NULL);
+INSERT INTO `options` VALUES (46,'Contract',NULL);
+INSERT INTO `options` VALUES (47,'Bonds',NULL);
+INSERT INTO `options` VALUES (48,'Notice to Proceed',NULL);
+INSERT INTO `options` VALUES (49,'Relocation Plan',NULL);
+INSERT INTO `options` VALUES (50,'Utilities',NULL);
+INSERT INTO `options` VALUES (51,'Accessibility Lift',NULL);
+CREATE TABLE failOption (
+	FailOptionID	INTEGER,
+	FailReportID	INTEGER,
+	OptionID	INTEGER,
+	SequenceID	INTEGER,
+	InspectionID	varchar(100),
+	PRIMARY KEY(FailOptionID)
+);
+INSERT INTO `failOption` VALUES (1,1,46,9,'1');
+INSERT INTO `failOption` VALUES (2,2,47,9,'1');
+INSERT INTO `failOption` VALUES (3,3,48,9,'1');
+INSERT INTO `failOption` VALUES (4,4,49,9,'1');
+INSERT INTO `failOption` VALUES (5,5,50,9,'1');
+INSERT INTO `failOption` VALUES (6,160,1,1,'2');
+INSERT INTO `failOption` VALUES (7,7,5,2,'2');
+INSERT INTO `failOption` VALUES (8,7,6,2,'2');
+INSERT INTO `failOption` VALUES (9,7,7,2,'2');
+INSERT INTO `failOption` VALUES (10,7,8,2,'2');
+INSERT INTO `failOption` VALUES (11,8,5,2,'2');
+INSERT INTO `failOption` VALUES (12,8,6,2,'2');
+INSERT INTO `failOption` VALUES (13,8,7,2,'2');
+INSERT INTO `failOption` VALUES (14,8,8,2,'2');
+INSERT INTO `failOption` VALUES (15,9,9,3,'2');
+INSERT INTO `failOption` VALUES (16,10,9,3,'2');
+INSERT INTO `failOption` VALUES (17,11,10,3,'2');
+INSERT INTO `failOption` VALUES (18,12,10,3,'2');
+INSERT INTO `failOption` VALUES (19,13,10,3,'2');
+INSERT INTO `failOption` VALUES (20,14,13,3,'2');
+INSERT INTO `failOption` VALUES (21,15,13,3,'2');
+INSERT INTO `failOption` VALUES (22,16,13,3,'2');
+INSERT INTO `failOption` VALUES (23,17,13,3,'2');
+INSERT INTO `failOption` VALUES (24,18,13,3,'2');
+INSERT INTO `failOption` VALUES (25,19,13,3,'2');
+INSERT INTO `failOption` VALUES (26,20,13,3,'2');
+INSERT INTO `failOption` VALUES (27,21,13,3,'2');
+INSERT INTO `failOption` VALUES (28,22,14,3,'2');
+INSERT INTO `failOption` VALUES (29,23,14,3,'2');
+INSERT INTO `failOption` VALUES (30,24,14,3,'2');
+INSERT INTO `failOption` VALUES (31,25,14,3,'2');
+INSERT INTO `failOption` VALUES (32,26,14,3,'2');
+INSERT INTO `failOption` VALUES (33,27,14,3,'2');
+INSERT INTO `failOption` VALUES (34,28,14,3,'2');
+INSERT INTO `failOption` VALUES (35,29,14,3,'2');
+INSERT INTO `failOption` VALUES (36,30,14,3,'2');
+INSERT INTO `failOption` VALUES (37,31,14,3,'2');
+INSERT INTO `failOption` VALUES (42,160,1,1,'3');
+INSERT INTO `failOption` VALUES (43,7,5,2,'3');
+INSERT INTO `failOption` VALUES (44,8,5,2,'3');
+INSERT INTO `failOption` VALUES (45,7,6,2,'3');
+INSERT INTO `failOption` VALUES (46,8,6,2,'3');
+INSERT INTO `failOption` VALUES (47,7,7,2,'3');
+INSERT INTO `failOption` VALUES (48,8,7,2,'3');
+INSERT INTO `failOption` VALUES (49,7,8,2,'3');
+INSERT INTO `failOption` VALUES (50,8,8,2,'3');
+INSERT INTO `failOption` VALUES (51,35,12,10,'3');
+INSERT INTO `failOption` VALUES (52,36,12,10,'3');
+INSERT INTO `failOption` VALUES (53,37,12,10,'3');
+INSERT INTO `failOption` VALUES (54,38,12,10,'3');
+INSERT INTO `failOption` VALUES (55,39,12,10,'3');
+INSERT INTO `failOption` VALUES (56,40,12,10,'3');
+INSERT INTO `failOption` VALUES (57,41,12,10,'3');
+INSERT INTO `failOption` VALUES (58,100,16,4,'3');
+INSERT INTO `failOption` VALUES (59,101,16,4,'3');
+INSERT INTO `failOption` VALUES (60,43,20,5,'3');
+INSERT INTO `failOption` VALUES (61,44,20,5,'3');
+INSERT INTO `failOption` VALUES (62,45,20,5,'3');
+INSERT INTO `failOption` VALUES (63,46,20,5,'3');
+INSERT INTO `failOption` VALUES (64,47,20,5,'3');
+INSERT INTO `failOption` VALUES (65,48,20,5,'3');
+INSERT INTO `failOption` VALUES (66,49,20,5,'3');
+INSERT INTO `failOption` VALUES (67,50,20,5,'3');
+INSERT INTO `failOption` VALUES (68,51,20,5,'3');
+INSERT INTO `failOption` VALUES (69,52,20,5,'3');
+INSERT INTO `failOption` VALUES (70,53,23,5,'3');
+INSERT INTO `failOption` VALUES (71,54,23,5,'3');
+INSERT INTO `failOption` VALUES (72,55,23,5,'3');
+INSERT INTO `failOption` VALUES (73,56,22,5,'3');
+INSERT INTO `failOption` VALUES (74,57,22,5,'3');
+INSERT INTO `failOption` VALUES (75,58,22,5,'3');
+INSERT INTO `failOption` VALUES (76,59,22,5,'3');
+INSERT INTO `failOption` VALUES (77,60,22,5,'3');
+INSERT INTO `failOption` VALUES (78,82,24,5,'3');
+INSERT INTO `failOption` VALUES (79,83,24,5,'3');
+INSERT INTO `failOption` VALUES (80,84,24,5,'3');
+INSERT INTO `failOption` VALUES (81,78,25,5,'3');
+INSERT INTO `failOption` VALUES (82,79,25,5,'3');
+INSERT INTO `failOption` VALUES (83,80,25,5,'3');
+INSERT INTO `failOption` VALUES (84,81,25,5,'3');
+INSERT INTO `failOption` VALUES (85,61,21,6,'3');
+INSERT INTO `failOption` VALUES (86,62,21,6,'3');
+INSERT INTO `failOption` VALUES (87,63,21,6,'3');
+INSERT INTO `failOption` VALUES (88,64,21,6,'3');
+INSERT INTO `failOption` VALUES (89,65,21,6,'3');
+INSERT INTO `failOption` VALUES (90,66,21,6,'3');
+INSERT INTO `failOption` VALUES (91,67,21,6,'3');
+INSERT INTO `failOption` VALUES (92,68,21,6,'3');
+INSERT INTO `failOption` VALUES (93,69,21,6,'3');
+INSERT INTO `failOption` VALUES (94,70,21,6,'3');
+INSERT INTO `failOption` VALUES (95,71,21,6,'3');
+INSERT INTO `failOption` VALUES (96,72,21,6,'3');
+INSERT INTO `failOption` VALUES (97,73,21,6,'3');
+INSERT INTO `failOption` VALUES (98,74,21,6,'3');
+INSERT INTO `failOption` VALUES (99,75,21,6,'3');
+INSERT INTO `failOption` VALUES (100,76,21,6,'3');
+INSERT INTO `failOption` VALUES (101,77,21,6,'3');
+INSERT INTO `failOption` VALUES (102,85,35,11,'3');
+INSERT INTO `failOption` VALUES (103,86,35,11,'3');
+INSERT INTO `failOption` VALUES (104,87,35,11,'3');
+INSERT INTO `failOption` VALUES (105,88,35,11,'3');
+INSERT INTO `failOption` VALUES (106,89,31,11,'3');
+INSERT INTO `failOption` VALUES (107,90,31,11,'3');
+INSERT INTO `failOption` VALUES (108,91,31,11,'3');
+INSERT INTO `failOption` VALUES (109,92,31,11,'3');
+INSERT INTO `failOption` VALUES (110,93,33,11,'3');
+INSERT INTO `failOption` VALUES (111,94,33,11,'3');
+INSERT INTO `failOption` VALUES (112,95,33,11,'3');
+INSERT INTO `failOption` VALUES (113,96,33,11,'3');
+INSERT INTO `failOption` VALUES (126,9,9,3,'4');
+INSERT INTO `failOption` VALUES (127,10,9,3,'4');
+INSERT INTO `failOption` VALUES (128,11,9,3,'4');
+INSERT INTO `failOption` VALUES (129,12,10,3,'4');
+INSERT INTO `failOption` VALUES (130,13,10,3,'4');
+INSERT INTO `failOption` VALUES (131,14,13,3,'4');
+INSERT INTO `failOption` VALUES (132,15,13,3,'4');
+INSERT INTO `failOption` VALUES (133,16,13,3,'4');
+INSERT INTO `failOption` VALUES (134,17,13,3,'4');
+INSERT INTO `failOption` VALUES (135,18,13,3,'4');
+INSERT INTO `failOption` VALUES (136,19,13,3,'4');
+INSERT INTO `failOption` VALUES (137,20,13,3,'4');
+INSERT INTO `failOption` VALUES (138,21,13,3,'4');
+INSERT INTO `failOption` VALUES (139,22,14,3,'4');
+INSERT INTO `failOption` VALUES (140,23,14,3,'4');
+INSERT INTO `failOption` VALUES (141,24,14,3,'4');
+INSERT INTO `failOption` VALUES (142,25,14,3,'4');
+INSERT INTO `failOption` VALUES (143,26,14,3,'4');
+INSERT INTO `failOption` VALUES (144,27,14,3,'4');
+INSERT INTO `failOption` VALUES (145,28,14,3,'4');
+INSERT INTO `failOption` VALUES (146,29,14,3,'4');
+INSERT INTO `failOption` VALUES (147,30,14,3,'4');
+INSERT INTO `failOption` VALUES (148,31,14,3,'4');
+INSERT INTO `failOption` VALUES (161,35,12,10,'5');
+INSERT INTO `failOption` VALUES (162,36,12,10,'5');
+INSERT INTO `failOption` VALUES (163,37,12,10,'5');
+INSERT INTO `failOption` VALUES (164,38,12,10,'5');
+INSERT INTO `failOption` VALUES (165,39,12,10,'5');
+INSERT INTO `failOption` VALUES (166,40,12,10,'5');
+INSERT INTO `failOption` VALUES (167,41,12,10,'5');
+INSERT INTO `failOption` VALUES (168,43,20,17,'5');
+INSERT INTO `failOption` VALUES (169,44,20,17,'5');
+INSERT INTO `failOption` VALUES (170,45,20,17,'5');
+INSERT INTO `failOption` VALUES (171,46,20,17,'5');
+INSERT INTO `failOption` VALUES (172,47,20,17,'5');
+INSERT INTO `failOption` VALUES (173,48,20,17,'5');
+INSERT INTO `failOption` VALUES (174,49,20,17,'5');
+INSERT INTO `failOption` VALUES (175,50,20,17,'5');
+INSERT INTO `failOption` VALUES (176,51,20,17,'5');
+INSERT INTO `failOption` VALUES (177,52,20,17,'5');
+INSERT INTO `failOption` VALUES (178,53,23,17,'5');
+INSERT INTO `failOption` VALUES (179,54,23,17,'5');
+INSERT INTO `failOption` VALUES (180,55,23,17,'5');
+INSERT INTO `failOption` VALUES (181,56,22,17,'5');
+INSERT INTO `failOption` VALUES (182,57,22,17,'5');
+INSERT INTO `failOption` VALUES (183,58,22,17,'5');
+INSERT INTO `failOption` VALUES (184,59,22,17,'5');
+INSERT INTO `failOption` VALUES (185,60,22,17,'5');
+INSERT INTO `failOption` VALUES (186,78,25,17,'5');
+INSERT INTO `failOption` VALUES (187,79,25,17,'5');
+INSERT INTO `failOption` VALUES (188,80,25,17,'5');
+INSERT INTO `failOption` VALUES (189,81,25,17,'5');
+INSERT INTO `failOption` VALUES (190,82,24,17,'5');
+INSERT INTO `failOption` VALUES (191,83,24,17,'5');
+INSERT INTO `failOption` VALUES (192,84,24,17,'5');
+INSERT INTO `failOption` VALUES (193,85,35,7,'5');
+INSERT INTO `failOption` VALUES (194,86,35,7,'5');
+INSERT INTO `failOption` VALUES (195,87,35,7,'5');
+INSERT INTO `failOption` VALUES (196,88,35,7,'5');
+INSERT INTO `failOption` VALUES (197,89,31,7,'5');
+INSERT INTO `failOption` VALUES (198,90,31,7,'5');
+INSERT INTO `failOption` VALUES (199,91,31,7,'5');
+INSERT INTO `failOption` VALUES (200,92,31,7,'5');
+INSERT INTO `failOption` VALUES (201,93,33,7,'5');
+INSERT INTO `failOption` VALUES (202,94,33,7,'5');
+INSERT INTO `failOption` VALUES (203,96,33,7,'5');
+INSERT INTO `failOption` VALUES (204,160,1,1,'5');
+INSERT INTO `failOption` VALUES (217,97,12,10,'6');
+INSERT INTO `failOption` VALUES (218,98,12,10,'6');
+INSERT INTO `failOption` VALUES (219,99,15,4,'6');
+INSERT INTO `failOption` VALUES (220,100,16,4,'6');
+INSERT INTO `failOption` VALUES (221,101,16,4,'6');
+INSERT INTO `failOption` VALUES (222,102,20,12,'6');
+INSERT INTO `failOption` VALUES (223,103,20,12,'6');
+INSERT INTO `failOption` VALUES (224,104,28,12,'6');
+INSERT INTO `failOption` VALUES (225,105,29,12,'6');
+INSERT INTO `failOption` VALUES (226,106,30,12,'6');
+INSERT INTO `failOption` VALUES (227,107,30,6,'6');
+INSERT INTO `failOption` VALUES (228,108,24,6,'6');
+INSERT INTO `failOption` VALUES (229,109,24,6,'6');
+INSERT INTO `failOption` VALUES (230,110,24,6,'6');
+INSERT INTO `failOption` VALUES (231,111,24,6,'6');
+INSERT INTO `failOption` VALUES (232,112,44,6,'6');
+INSERT INTO `failOption` VALUES (233,113,44,6,'6');
+INSERT INTO `failOption` VALUES (234,114,43,6,'6');
+INSERT INTO `failOption` VALUES (235,115,43,6,'6');
+INSERT INTO `failOption` VALUES (236,116,43,6,'6');
+INSERT INTO `failOption` VALUES (237,117,43,6,'6');
+INSERT INTO `failOption` VALUES (238,118,45,6,'6');
+INSERT INTO `failOption` VALUES (240,120,45,6,'6');
+INSERT INTO `failOption` VALUES (241,121,36,13,'6');
+INSERT INTO `failOption` VALUES (242,122,36,13,'6');
+INSERT INTO `failOption` VALUES (243,123,36,13,'6');
+INSERT INTO `failOption` VALUES (244,124,36,13,'6');
+INSERT INTO `failOption` VALUES (245,125,36,13,'6');
+INSERT INTO `failOption` VALUES (246,126,36,13,'6');
+INSERT INTO `failOption` VALUES (247,127,36,13,'6');
+INSERT INTO `failOption` VALUES (248,128,36,13,'6');
+INSERT INTO `failOption` VALUES (249,129,32,13,'6');
+INSERT INTO `failOption` VALUES (250,130,32,13,'6');
+INSERT INTO `failOption` VALUES (251,131,32,13,'6');
+INSERT INTO `failOption` VALUES (252,132,34,13,'6');
+INSERT INTO `failOption` VALUES (253,133,34,13,'6');
+INSERT INTO `failOption` VALUES (254,134,34,13,'6');
+INSERT INTO `failOption` VALUES (255,135,41,13,'6');
+INSERT INTO `failOption` VALUES (256,136,41,13,'6');
+INSERT INTO `failOption` VALUES (257,137,41,13,'6');
+INSERT INTO `failOption` VALUES (262,160,1,14,'7');
+INSERT INTO `failOption` VALUES (263,138,2,14,'7');
+INSERT INTO `failOption` VALUES (264,139,4,14,'7');
+INSERT INTO `failOption` VALUES (265,100,51,15,'7');
+INSERT INTO `failOption` VALUES (266,101,51,15,'7');
+INSERT INTO `failOption` VALUES (267,140,15,15,'7');
+INSERT INTO `failOption` VALUES (268,180,20,16,'7');
+INSERT INTO `failOption` VALUES (269,106,30,16,'7');
+INSERT INTO `failOption` VALUES (274,148,36,13,'7');
+INSERT INTO `failOption` VALUES (275,149,32,13,'7');
+INSERT INTO `failOption` VALUES (276,150,34,13,'7');
+INSERT INTO `failOption` VALUES (277,151,34,13,'7');
+INSERT INTO `failOption` VALUES (278,152,34,13,'7');
+INSERT INTO `failOption` VALUES (279,153,34,13,'7');
+INSERT INTO `failOption` VALUES (280,154,34,13,'7');
+INSERT INTO `failOption` VALUES (281,155,34,13,'7');
+INSERT INTO `failOption` VALUES (282,156,34,13,'7');
+INSERT INTO `failOption` VALUES (283,157,34,13,'7');
+INSERT INTO `failOption` VALUES (284,158,34,13,'7');
+INSERT INTO `failOption` VALUES (285,159,37,13,'7');
+INSERT INTO `failOption` VALUES (289,142,25,6,'7');
+INSERT INTO `failOption` VALUES (290,143,25,6,'7');
+INSERT INTO `failOption` VALUES (291,144,25,6,'7');
+INSERT INTO `failOption` VALUES (292,145,24,6,'7');
+INSERT INTO `failOption` VALUES (293,146,44,6,'7');
+INSERT INTO `failOption` VALUES (294,114,43,6,'7');
+INSERT INTO `failOption` VALUES (295,115,43,6,'7');
+INSERT INTO `failOption` VALUES (296,116,43,6,'7');
+INSERT INTO `failOption` VALUES (297,117,43,6,'7');
+INSERT INTO `failOption` VALUES (298,118,45,6,'7');
+INSERT INTO `failOption` VALUES (300,120,45,6,'7');
+INSERT INTO `failOption` VALUES (301,135,41,6,'7');
+INSERT INTO `failOption` VALUES (302,136,41,6,'7');
+INSERT INTO `failOption` VALUES (303,137,41,6,'7');
+INSERT INTO `failOption` VALUES (304,147,42,6,'7');
+INSERT INTO `failOption` VALUES (305,162,40,8,'2');
+INSERT INTO `failOption` VALUES (306,163,40,8,'2');
+INSERT INTO `failOption` VALUES (307,164,40,8,'2');
+INSERT INTO `failOption` VALUES (308,165,40,8,'2');
+INSERT INTO `failOption` VALUES (309,166,40,8,'2');
+INSERT INTO `failOption` VALUES (310,167,40,8,'2');
+INSERT INTO `failOption` VALUES (311,168,40,8,'2');
+INSERT INTO `failOption` VALUES (312,169,40,8,'2');
+INSERT INTO `failOption` VALUES (313,170,40,8,'2');
+INSERT INTO `failOption` VALUES (314,171,40,8,'2');
+INSERT INTO `failOption` VALUES (315,172,40,8,'2');
+INSERT INTO `failOption` VALUES (316,173,40,8,'2');
+INSERT INTO `failOption` VALUES (317,174,38,8,'2');
+INSERT INTO `failOption` VALUES (318,175,38,8,'2');
+INSERT INTO `failOption` VALUES (319,176,38,8,'2');
+INSERT INTO `failOption` VALUES (320,177,38,8,'2');
+INSERT INTO `failOption` VALUES (321,178,38,8,'2');
+INSERT INTO `failOption` VALUES (322,179,38,8,'2');
+INSERT INTO `failOption` VALUES (323,162,40,8,'3');
+INSERT INTO `failOption` VALUES (324,163,40,8,'3');
+INSERT INTO `failOption` VALUES (325,164,40,8,'3');
+INSERT INTO `failOption` VALUES (326,165,40,8,'3');
+INSERT INTO `failOption` VALUES (327,166,40,8,'3');
+INSERT INTO `failOption` VALUES (328,167,40,8,'3');
+INSERT INTO `failOption` VALUES (329,168,40,8,'3');
+INSERT INTO `failOption` VALUES (330,169,40,8,'3');
+INSERT INTO `failOption` VALUES (331,170,40,8,'3');
+INSERT INTO `failOption` VALUES (332,171,40,8,'3');
+INSERT INTO `failOption` VALUES (333,172,40,8,'3');
+INSERT INTO `failOption` VALUES (334,173,40,8,'3');
+INSERT INTO `failOption` VALUES (335,174,38,8,'3');
+INSERT INTO `failOption` VALUES (336,175,38,8,'3');
+INSERT INTO `failOption` VALUES (337,176,38,8,'3');
+INSERT INTO `failOption` VALUES (338,177,38,8,'3');
+INSERT INTO `failOption` VALUES (339,178,38,8,'3');
+INSERT INTO `failOption` VALUES (340,179,38,8,'3');
+INSERT INTO `failOption` VALUES (341,162,40,8,'4');
+INSERT INTO `failOption` VALUES (342,163,40,8,'4');
+INSERT INTO `failOption` VALUES (343,164,40,8,'4');
+INSERT INTO `failOption` VALUES (344,165,40,8,'4');
+INSERT INTO `failOption` VALUES (345,166,40,8,'4');
+INSERT INTO `failOption` VALUES (346,167,40,8,'4');
+INSERT INTO `failOption` VALUES (347,168,40,8,'4');
+INSERT INTO `failOption` VALUES (348,169,40,8,'4');
+INSERT INTO `failOption` VALUES (349,170,40,8,'4');
+INSERT INTO `failOption` VALUES (350,171,40,8,'4');
+INSERT INTO `failOption` VALUES (351,172,40,8,'4');
+INSERT INTO `failOption` VALUES (352,173,40,8,'4');
+INSERT INTO `failOption` VALUES (353,174,38,8,'4');
+INSERT INTO `failOption` VALUES (354,175,38,8,'4');
+INSERT INTO `failOption` VALUES (355,176,38,8,'4');
+INSERT INTO `failOption` VALUES (356,177,38,8,'4');
+INSERT INTO `failOption` VALUES (357,178,38,8,'4');
+INSERT INTO `failOption` VALUES (358,179,38,8,'4');
+INSERT INTO `failOption` VALUES (359,162,40,8,'5');
+INSERT INTO `failOption` VALUES (360,163,40,8,'5');
+INSERT INTO `failOption` VALUES (361,164,40,8,'5');
+INSERT INTO `failOption` VALUES (362,165,40,8,'5');
+INSERT INTO `failOption` VALUES (363,166,40,8,'5');
+INSERT INTO `failOption` VALUES (364,167,40,8,'5');
+INSERT INTO `failOption` VALUES (365,168,40,8,'5');
+INSERT INTO `failOption` VALUES (366,169,40,8,'5');
+INSERT INTO `failOption` VALUES (367,170,40,8,'5');
+INSERT INTO `failOption` VALUES (368,171,40,8,'5');
+INSERT INTO `failOption` VALUES (369,172,40,8,'5');
+INSERT INTO `failOption` VALUES (370,173,40,8,'5');
+INSERT INTO `failOption` VALUES (371,174,38,8,'5');
+INSERT INTO `failOption` VALUES (372,175,38,8,'5');
+INSERT INTO `failOption` VALUES (373,176,38,8,'5');
+INSERT INTO `failOption` VALUES (374,177,38,8,'5');
+INSERT INTO `failOption` VALUES (375,178,38,8,'5');
+INSERT INTO `failOption` VALUES (376,179,38,8,'5');
+INSERT INTO `failOption` VALUES (377,162,40,8,'6');
+INSERT INTO `failOption` VALUES (378,163,40,8,'6');
+INSERT INTO `failOption` VALUES (379,164,40,8,'6');
+INSERT INTO `failOption` VALUES (380,165,40,8,'6');
+INSERT INTO `failOption` VALUES (381,166,40,8,'6');
+INSERT INTO `failOption` VALUES (382,167,40,8,'6');
+INSERT INTO `failOption` VALUES (383,168,40,8,'6');
+INSERT INTO `failOption` VALUES (384,169,40,8,'6');
+INSERT INTO `failOption` VALUES (385,170,40,8,'6');
+INSERT INTO `failOption` VALUES (386,171,40,8,'6');
+INSERT INTO `failOption` VALUES (387,172,40,8,'6');
+INSERT INTO `failOption` VALUES (388,173,40,8,'6');
+INSERT INTO `failOption` VALUES (389,174,40,8,'6');
+INSERT INTO `failOption` VALUES (390,175,40,8,'6');
+INSERT INTO `failOption` VALUES (391,176,40,8,'6');
+INSERT INTO `failOption` VALUES (392,177,40,8,'6');
+INSERT INTO `failOption` VALUES (393,178,40,8,'6');
+INSERT INTO `failOption` VALUES (394,179,40,8,'6');
+INSERT INTO `failOption` VALUES (395,162,38,8,'7');
+INSERT INTO `failOption` VALUES (396,163,38,8,'7');
+INSERT INTO `failOption` VALUES (397,164,38,8,'7');
+INSERT INTO `failOption` VALUES (398,165,38,8,'7');
+INSERT INTO `failOption` VALUES (399,166,38,8,'7');
+INSERT INTO `failOption` VALUES (400,167,38,8,'7');
+INSERT INTO `failOption` VALUES (401,168,38,8,'7');
+INSERT INTO `failOption` VALUES (402,169,38,8,'7');
+INSERT INTO `failOption` VALUES (403,170,38,8,'7');
+INSERT INTO `failOption` VALUES (404,171,38,8,'7');
+INSERT INTO `failOption` VALUES (405,172,38,8,'7');
+INSERT INTO `failOption` VALUES (406,173,38,8,'7');
+INSERT INTO `failOption` VALUES (407,174,38,8,'7');
+INSERT INTO `failOption` VALUES (408,175,38,8,'7');
+INSERT INTO `failOption` VALUES (409,176,38,8,'7');
+INSERT INTO `failOption` VALUES (410,177,38,8,'7');
+INSERT INTO `failOption` VALUES (411,178,38,8,'7');
+INSERT INTO `failOption` VALUES (412,179,38,8,'7');
+INSERT INTO `failOption` VALUES (413,42,15,4,'3');
+INSERT INTO `failOption` VALUES (414,61,21,17,'5');
+INSERT INTO `failOption` VALUES (415,62,21,17,'5');
+INSERT INTO `failOption` VALUES (416,63,21,17,'5');
+INSERT INTO `failOption` VALUES (417,64,21,17,'5');
+INSERT INTO `failOption` VALUES (418,65,21,17,'5');
+INSERT INTO `failOption` VALUES (419,66,21,17,'5');
+INSERT INTO `failOption` VALUES (420,67,21,17,'5');
+INSERT INTO `failOption` VALUES (421,68,21,17,'5');
+INSERT INTO `failOption` VALUES (422,69,21,17,'5');
+INSERT INTO `failOption` VALUES (423,70,21,17,'5');
+INSERT INTO `failOption` VALUES (424,71,21,17,'5');
+INSERT INTO `failOption` VALUES (425,72,21,17,'5');
+INSERT INTO `failOption` VALUES (426,73,21,17,'5');
+INSERT INTO `failOption` VALUES (427,74,21,17,'5');
+INSERT INTO `failOption` VALUES (428,75,21,17,'5');
+INSERT INTO `failOption` VALUES (429,76,21,17,'5');
+INSERT INTO `failOption` VALUES (430,77,21,17,'5');
+INSERT INTO `failOption` VALUES (431,42,12,10,'5');
+INSERT INTO `failOption` VALUES (432,160,1,1,'6');
+INSERT INTO `failOption` VALUES (433,181,30,6,'7');
+INSERT INTO `failOption` VALUES (434,182,30,6,'7');
+INSERT INTO `failOption` VALUES (435,183,30,6,'7');
+INSERT INTO `failOption` VALUES (436,95,33,7,'5');
+CREATE TABLE User
+(
+UserID integer,
+Token integer,
+FirstName varchar(255),
+LastName varchar(255),
+ExpiryDate datetime,
+PRIMARY KEY(UserID)
+);
+CREATE TABLE "SpaceSequence" (
+	`SpaceSequenceID`	INTEGER,
+	`SpaceVisible`	bool,
+	`SequenceID`	int,
+	PRIMARY KEY(SpaceSequenceID),
+	FOREIGN KEY(`SequenceID`) REFERENCES Sequences ( SequenceID )
+);
+INSERT INTO `SpaceSequence` VALUES (1,0,1);
+INSERT INTO `SpaceSequence` VALUES (2,0,2);
+INSERT INTO `SpaceSequence` VALUES (3,0,3);
+INSERT INTO `SpaceSequence` VALUES (4,0,4);
+INSERT INTO `SpaceSequence` VALUES (5,0,5);
+INSERT INTO `SpaceSequence` VALUES (6,1,6);
+INSERT INTO `SpaceSequence` VALUES (7,0,7);
+INSERT INTO `SpaceSequence` VALUES (8,0,8);
+INSERT INTO `SpaceSequence` VALUES (9,0,9);
+INSERT INTO `SpaceSequence` VALUES (10,0,10);
+INSERT INTO `SpaceSequence` VALUES (11,0,11);
+INSERT INTO `SpaceSequence` VALUES (12,0,12);
+INSERT INTO `SpaceSequence` VALUES (13,1,13);
+INSERT INTO `SpaceSequence` VALUES (17,0,14);
+INSERT INTO `SpaceSequence` VALUES (18,0,15);
+INSERT INTO `SpaceSequence` VALUES (19,0,16);
+INSERT INTO `SpaceSequence` VALUES (20,0,17);
+INSERT INTO `SpaceSequence` VALUES (21,0,18);
+INSERT INTO `SpaceSequence` VALUES (22,NULL,NULL);
+CREATE TABLE SpaceOption (
+	SpaceOptionID	INTEGER,
+	OptionsId	int,
+	SpaceId	int,
+	SequenceID	INTEGER,
+	InspectionID	varchar(100),
+	PRIMARY KEY(SpaceOptionID),
+	FOREIGN KEY(`OptionsId`) REFERENCES options ( OptionsId ),
+	FOREIGN KEY(`SpaceId`) REFERENCES Space ( SpaceId )
+);
+INSERT INTO `SpaceOption` VALUES (1,21,1,6,'3');
+INSERT INTO `SpaceOption` VALUES (2,21,2,6,'3');
+INSERT INTO `SpaceOption` VALUES (3,21,3,6,'3');
+INSERT INTO `SpaceOption` VALUES (4,21,4,6,'3');
+INSERT INTO `SpaceOption` VALUES (5,21,5,6,'3');
+INSERT INTO `SpaceOption` VALUES (6,21,6,6,'3');
+INSERT INTO `SpaceOption` VALUES (7,21,7,6,'3');
+INSERT INTO `SpaceOption` VALUES (8,21,8,6,'3');
+INSERT INTO `SpaceOption` VALUES (9,21,9,6,'3');
+INSERT INTO `SpaceOption` VALUES (10,21,10,6,'3');
+INSERT INTO `SpaceOption` VALUES (11,21,11,6,'3');
+INSERT INTO `SpaceOption` VALUES (12,21,12,6,'3');
+INSERT INTO `SpaceOption` VALUES (13,21,13,6,'3');
+INSERT INTO `SpaceOption` VALUES (14,21,14,6,'3');
+INSERT INTO `SpaceOption` VALUES (15,21,15,6,'3');
+INSERT INTO `SpaceOption` VALUES (16,21,16,6,'3');
+INSERT INTO `SpaceOption` VALUES (17,21,17,6,'3');
+INSERT INTO `SpaceOption` VALUES (18,21,18,6,'3');
+INSERT INTO `SpaceOption` VALUES (19,21,19,6,'3');
+INSERT INTO `SpaceOption` VALUES (20,21,20,6,'3');
+INSERT INTO `SpaceOption` VALUES (21,21,21,6,'3');
+INSERT INTO `SpaceOption` VALUES (22,24,1,6,'6');
+INSERT INTO `SpaceOption` VALUES (23,24,2,6,'6');
+INSERT INTO `SpaceOption` VALUES (24,24,3,6,'6');
+INSERT INTO `SpaceOption` VALUES (25,24,4,6,'6');
+INSERT INTO `SpaceOption` VALUES (26,24,5,6,'6');
+INSERT INTO `SpaceOption` VALUES (27,24,6,6,'6');
+INSERT INTO `SpaceOption` VALUES (28,24,7,6,'6');
+INSERT INTO `SpaceOption` VALUES (29,24,8,6,'6');
+INSERT INTO `SpaceOption` VALUES (30,24,9,6,'6');
+INSERT INTO `SpaceOption` VALUES (31,24,10,6,'6');
+INSERT INTO `SpaceOption` VALUES (32,24,11,6,'6');
+INSERT INTO `SpaceOption` VALUES (33,24,12,6,'6');
+INSERT INTO `SpaceOption` VALUES (34,24,13,6,'6');
+INSERT INTO `SpaceOption` VALUES (35,24,14,6,'6');
+INSERT INTO `SpaceOption` VALUES (36,24,15,6,'6');
+INSERT INTO `SpaceOption` VALUES (37,24,16,6,'6');
+INSERT INTO `SpaceOption` VALUES (38,24,17,6,'6');
+INSERT INTO `SpaceOption` VALUES (39,24,18,6,'6');
+INSERT INTO `SpaceOption` VALUES (40,24,19,6,'6');
+INSERT INTO `SpaceOption` VALUES (41,24,20,6,'6');
+INSERT INTO `SpaceOption` VALUES (42,24,21,6,'6');
+INSERT INTO `SpaceOption` VALUES (43,30,1,6,'6');
+INSERT INTO `SpaceOption` VALUES (44,30,2,6,'6');
+INSERT INTO `SpaceOption` VALUES (45,30,3,6,'6');
+INSERT INTO `SpaceOption` VALUES (46,30,4,6,'6');
+INSERT INTO `SpaceOption` VALUES (47,30,5,6,'6');
+INSERT INTO `SpaceOption` VALUES (48,30,6,6,'6');
+INSERT INTO `SpaceOption` VALUES (49,30,7,6,'6');
+INSERT INTO `SpaceOption` VALUES (50,30,8,6,'6');
+INSERT INTO `SpaceOption` VALUES (51,30,9,6,'6');
+INSERT INTO `SpaceOption` VALUES (52,30,10,6,'6');
+INSERT INTO `SpaceOption` VALUES (53,30,11,6,'6');
+INSERT INTO `SpaceOption` VALUES (54,30,12,6,'6');
+INSERT INTO `SpaceOption` VALUES (55,30,13,6,'6');
+INSERT INTO `SpaceOption` VALUES (56,30,14,6,'6');
+INSERT INTO `SpaceOption` VALUES (57,30,15,6,'6');
+INSERT INTO `SpaceOption` VALUES (58,30,16,6,'6');
+INSERT INTO `SpaceOption` VALUES (59,30,17,6,'6');
+INSERT INTO `SpaceOption` VALUES (60,30,18,6,'6');
+INSERT INTO `SpaceOption` VALUES (61,30,19,6,'6');
+INSERT INTO `SpaceOption` VALUES (62,30,20,6,'6');
+INSERT INTO `SpaceOption` VALUES (63,30,21,6,'6');
+INSERT INTO `SpaceOption` VALUES (64,43,1,6,'6');
+INSERT INTO `SpaceOption` VALUES (65,43,2,6,'6');
+INSERT INTO `SpaceOption` VALUES (66,43,3,6,'6');
+INSERT INTO `SpaceOption` VALUES (67,43,4,6,'6');
+INSERT INTO `SpaceOption` VALUES (68,43,5,6,'6');
+INSERT INTO `SpaceOption` VALUES (69,43,6,6,'6');
+INSERT INTO `SpaceOption` VALUES (70,43,7,6,'6');
+INSERT INTO `SpaceOption` VALUES (71,43,8,6,'6');
+INSERT INTO `SpaceOption` VALUES (72,43,9,6,'6');
+INSERT INTO `SpaceOption` VALUES (73,43,10,6,'6');
+INSERT INTO `SpaceOption` VALUES (74,43,11,6,'6');
+INSERT INTO `SpaceOption` VALUES (75,43,12,6,'6');
+INSERT INTO `SpaceOption` VALUES (76,43,13,6,'6');
+INSERT INTO `SpaceOption` VALUES (77,43,14,6,'6');
+INSERT INTO `SpaceOption` VALUES (78,43,15,6,'6');
+INSERT INTO `SpaceOption` VALUES (79,43,16,6,'6');
+INSERT INTO `SpaceOption` VALUES (80,43,17,6,'6');
+INSERT INTO `SpaceOption` VALUES (81,43,18,6,'6');
+INSERT INTO `SpaceOption` VALUES (82,43,19,6,'6');
+INSERT INTO `SpaceOption` VALUES (83,43,20,6,'6');
+INSERT INTO `SpaceOption` VALUES (84,43,21,6,'6');
+INSERT INTO `SpaceOption` VALUES (85,44,1,6,'6');
+INSERT INTO `SpaceOption` VALUES (86,44,2,6,'6');
+INSERT INTO `SpaceOption` VALUES (87,44,3,6,'6');
+INSERT INTO `SpaceOption` VALUES (88,44,4,6,'6');
+INSERT INTO `SpaceOption` VALUES (89,44,5,6,'6');
+INSERT INTO `SpaceOption` VALUES (90,44,6,6,'6');
+INSERT INTO `SpaceOption` VALUES (91,44,7,6,'6');
+INSERT INTO `SpaceOption` VALUES (92,44,8,6,'6');
+INSERT INTO `SpaceOption` VALUES (93,44,9,6,'6');
+INSERT INTO `SpaceOption` VALUES (94,44,10,6,'6');
+INSERT INTO `SpaceOption` VALUES (95,44,11,6,'6');
+INSERT INTO `SpaceOption` VALUES (96,44,12,6,'6');
+INSERT INTO `SpaceOption` VALUES (97,44,13,6,'6');
+INSERT INTO `SpaceOption` VALUES (98,44,14,6,'6');
+INSERT INTO `SpaceOption` VALUES (99,44,15,6,'6');
+INSERT INTO `SpaceOption` VALUES (100,44,16,6,'6');
+INSERT INTO `SpaceOption` VALUES (101,44,17,6,'6');
+INSERT INTO `SpaceOption` VALUES (102,44,18,6,'6');
+INSERT INTO `SpaceOption` VALUES (103,44,19,6,'6');
+INSERT INTO `SpaceOption` VALUES (104,44,20,6,'6');
+INSERT INTO `SpaceOption` VALUES (105,44,21,6,'6');
+INSERT INTO `SpaceOption` VALUES (106,45,1,6,'6');
+INSERT INTO `SpaceOption` VALUES (107,45,2,6,'6');
+INSERT INTO `SpaceOption` VALUES (108,45,3,6,'6');
+INSERT INTO `SpaceOption` VALUES (109,45,4,6,'6');
+INSERT INTO `SpaceOption` VALUES (110,45,5,6,'6');
+INSERT INTO `SpaceOption` VALUES (111,45,6,6,'6');
+INSERT INTO `SpaceOption` VALUES (112,45,7,6,'6');
+INSERT INTO `SpaceOption` VALUES (113,45,8,6,'6');
+INSERT INTO `SpaceOption` VALUES (114,45,10,6,'6');
+INSERT INTO `SpaceOption` VALUES (115,45,11,6,'6');
+INSERT INTO `SpaceOption` VALUES (116,45,12,6,'6');
+INSERT INTO `SpaceOption` VALUES (117,45,13,6,'6');
+INSERT INTO `SpaceOption` VALUES (118,45,14,6,'6');
+INSERT INTO `SpaceOption` VALUES (119,45,15,6,'6');
+INSERT INTO `SpaceOption` VALUES (120,45,16,6,'6');
+INSERT INTO `SpaceOption` VALUES (121,45,17,6,'6');
+INSERT INTO `SpaceOption` VALUES (122,45,18,6,'6');
+INSERT INTO `SpaceOption` VALUES (123,45,19,6,'6');
+INSERT INTO `SpaceOption` VALUES (124,45,20,6,'6');
+INSERT INTO `SpaceOption` VALUES (125,45,21,6,'6');
+INSERT INTO `SpaceOption` VALUES (126,34,1,13,'6');
+INSERT INTO `SpaceOption` VALUES (127,34,2,13,'6');
+INSERT INTO `SpaceOption` VALUES (128,34,3,13,'6');
+INSERT INTO `SpaceOption` VALUES (129,34,4,13,'6');
+INSERT INTO `SpaceOption` VALUES (130,34,5,13,'6');
+INSERT INTO `SpaceOption` VALUES (131,34,6,13,'6');
+INSERT INTO `SpaceOption` VALUES (132,34,7,13,'6');
+INSERT INTO `SpaceOption` VALUES (133,34,8,13,'6');
+INSERT INTO `SpaceOption` VALUES (134,34,9,13,'6');
+INSERT INTO `SpaceOption` VALUES (135,34,10,13,'6');
+INSERT INTO `SpaceOption` VALUES (136,34,11,13,'6');
+INSERT INTO `SpaceOption` VALUES (137,34,12,13,'6');
+INSERT INTO `SpaceOption` VALUES (138,34,13,13,'6');
+INSERT INTO `SpaceOption` VALUES (139,34,14,13,'6');
+INSERT INTO `SpaceOption` VALUES (140,34,15,13,'6');
+INSERT INTO `SpaceOption` VALUES (141,34,15,13,'6');
+INSERT INTO `SpaceOption` VALUES (142,34,17,13,'6');
+INSERT INTO `SpaceOption` VALUES (143,34,18,13,'6');
+INSERT INTO `SpaceOption` VALUES (144,34,19,13,'6');
+INSERT INTO `SpaceOption` VALUES (145,34,20,13,'6');
+INSERT INTO `SpaceOption` VALUES (146,34,21,13,'6');
+INSERT INTO `SpaceOption` VALUES (147,41,1,13,'6');
+INSERT INTO `SpaceOption` VALUES (148,41,2,13,'6');
+INSERT INTO `SpaceOption` VALUES (149,41,3,13,'6');
+INSERT INTO `SpaceOption` VALUES (150,41,4,13,'6');
+INSERT INTO `SpaceOption` VALUES (151,41,5,13,'6');
+INSERT INTO `SpaceOption` VALUES (152,41,6,13,'6');
+INSERT INTO `SpaceOption` VALUES (153,41,7,13,'6');
+INSERT INTO `SpaceOption` VALUES (154,41,8,13,'6');
+INSERT INTO `SpaceOption` VALUES (155,41,9,13,'6');
+INSERT INTO `SpaceOption` VALUES (156,41,10,13,'6');
+INSERT INTO `SpaceOption` VALUES (157,41,11,13,'6');
+INSERT INTO `SpaceOption` VALUES (158,41,12,13,'6');
+INSERT INTO `SpaceOption` VALUES (159,41,13,13,'6');
+INSERT INTO `SpaceOption` VALUES (160,41,14,13,'6');
+INSERT INTO `SpaceOption` VALUES (161,41,15,13,'6');
+INSERT INTO `SpaceOption` VALUES (162,41,16,13,'6');
+INSERT INTO `SpaceOption` VALUES (163,41,17,13,'6');
+INSERT INTO `SpaceOption` VALUES (164,41,18,13,'6');
+INSERT INTO `SpaceOption` VALUES (165,41,19,13,'6');
+INSERT INTO `SpaceOption` VALUES (166,41,20,13,'6');
+INSERT INTO `SpaceOption` VALUES (167,41,21,13,'6');
+INSERT INTO `SpaceOption` VALUES (168,32,2,13,'6');
+INSERT INTO `SpaceOption` VALUES (169,32,3,13,'6');
+INSERT INTO `SpaceOption` VALUES (170,32,4,13,'6');
+INSERT INTO `SpaceOption` VALUES (171,32,15,13,'6');
+INSERT INTO `SpaceOption` VALUES (172,32,16,13,'6');
+INSERT INTO `SpaceOption` VALUES (173,36,2,13,'6');
+INSERT INTO `SpaceOption` VALUES (174,36,3,13,'6');
+INSERT INTO `SpaceOption` VALUES (175,36,4,13,'6');
+INSERT INTO `SpaceOption` VALUES (176,36,15,13,'6');
+INSERT INTO `SpaceOption` VALUES (177,36,16,13,'6');
+INSERT INTO `SpaceOption` VALUES (178,41,1,6,'7');
+INSERT INTO `SpaceOption` VALUES (179,41,2,6,'7');
+INSERT INTO `SpaceOption` VALUES (180,41,3,6,'7');
+INSERT INTO `SpaceOption` VALUES (181,41,4,6,'7');
+INSERT INTO `SpaceOption` VALUES (182,41,5,6,'7');
+INSERT INTO `SpaceOption` VALUES (183,41,6,6,'7');
+INSERT INTO `SpaceOption` VALUES (184,41,7,6,'7');
+INSERT INTO `SpaceOption` VALUES (185,41,8,6,'7');
+INSERT INTO `SpaceOption` VALUES (186,41,9,6,'7');
+INSERT INTO `SpaceOption` VALUES (187,41,10,6,'7');
+INSERT INTO `SpaceOption` VALUES (188,41,11,6,'7');
+INSERT INTO `SpaceOption` VALUES (189,41,12,6,'7');
+INSERT INTO `SpaceOption` VALUES (190,41,13,6,'7');
+INSERT INTO `SpaceOption` VALUES (191,41,14,6,'7');
+INSERT INTO `SpaceOption` VALUES (192,41,15,6,'7');
+INSERT INTO `SpaceOption` VALUES (193,41,16,6,'7');
+INSERT INTO `SpaceOption` VALUES (194,41,17,6,'7');
+INSERT INTO `SpaceOption` VALUES (195,41,18,6,'7');
+INSERT INTO `SpaceOption` VALUES (196,41,19,6,'7');
+INSERT INTO `SpaceOption` VALUES (197,41,20,6,'7');
+INSERT INTO `SpaceOption` VALUES (198,41,21,6,'7');
+INSERT INTO `SpaceOption` VALUES (199,45,1,6,'7');
+INSERT INTO `SpaceOption` VALUES (200,45,2,6,'7');
+INSERT INTO `SpaceOption` VALUES (201,45,3,6,'7');
+INSERT INTO `SpaceOption` VALUES (202,45,4,6,'7');
+INSERT INTO `SpaceOption` VALUES (203,45,5,6,'7');
+INSERT INTO `SpaceOption` VALUES (204,45,6,6,'7');
+INSERT INTO `SpaceOption` VALUES (205,45,7,6,'7');
+INSERT INTO `SpaceOption` VALUES (206,45,8,6,'7');
+INSERT INTO `SpaceOption` VALUES (207,45,9,6,'7');
+INSERT INTO `SpaceOption` VALUES (208,45,10,6,'7');
+INSERT INTO `SpaceOption` VALUES (209,45,11,6,'7');
+INSERT INTO `SpaceOption` VALUES (210,45,12,6,'7');
+INSERT INTO `SpaceOption` VALUES (211,45,13,6,'7');
+INSERT INTO `SpaceOption` VALUES (212,45,14,6,'7');
+INSERT INTO `SpaceOption` VALUES (213,45,15,6,'7');
+INSERT INTO `SpaceOption` VALUES (214,45,16,6,'7');
+INSERT INTO `SpaceOption` VALUES (215,45,17,6,'7');
+INSERT INTO `SpaceOption` VALUES (216,45,18,6,'7');
+INSERT INTO `SpaceOption` VALUES (217,45,19,6,'7');
+INSERT INTO `SpaceOption` VALUES (218,45,20,6,'7');
+INSERT INTO `SpaceOption` VALUES (219,45,21,6,'7');
+INSERT INTO `SpaceOption` VALUES (220,43,1,6,'7');
+INSERT INTO `SpaceOption` VALUES (221,43,2,6,'7');
+INSERT INTO `SpaceOption` VALUES (222,43,3,6,'7');
+INSERT INTO `SpaceOption` VALUES (223,43,4,6,'7');
+INSERT INTO `SpaceOption` VALUES (224,43,5,6,'7');
+INSERT INTO `SpaceOption` VALUES (225,43,6,6,'7');
+INSERT INTO `SpaceOption` VALUES (226,43,7,6,'7');
+INSERT INTO `SpaceOption` VALUES (227,43,8,6,'7');
+INSERT INTO `SpaceOption` VALUES (228,43,9,6,'7');
+INSERT INTO `SpaceOption` VALUES (229,43,10,6,'7');
+INSERT INTO `SpaceOption` VALUES (230,43,11,6,'7');
+INSERT INTO `SpaceOption` VALUES (231,43,12,6,'7');
+INSERT INTO `SpaceOption` VALUES (232,43,13,6,'7');
+INSERT INTO `SpaceOption` VALUES (233,43,14,6,'7');
+INSERT INTO `SpaceOption` VALUES (234,43,15,6,'7');
+INSERT INTO `SpaceOption` VALUES (235,43,16,6,'7');
+INSERT INTO `SpaceOption` VALUES (236,43,17,6,'7');
+INSERT INTO `SpaceOption` VALUES (237,43,18,6,'7');
+INSERT INTO `SpaceOption` VALUES (238,43,19,6,'7');
+INSERT INTO `SpaceOption` VALUES (239,43,20,6,'7');
+INSERT INTO `SpaceOption` VALUES (240,43,21,6,'7');
+INSERT INTO `SpaceOption` VALUES (241,44,1,6,'7');
+INSERT INTO `SpaceOption` VALUES (242,44,2,6,'7');
+INSERT INTO `SpaceOption` VALUES (243,44,3,6,'7');
+INSERT INTO `SpaceOption` VALUES (244,44,4,6,'7');
+INSERT INTO `SpaceOption` VALUES (245,44,5,6,'7');
+INSERT INTO `SpaceOption` VALUES (246,44,6,6,'7');
+INSERT INTO `SpaceOption` VALUES (247,44,7,6,'7');
+INSERT INTO `SpaceOption` VALUES (248,44,8,6,'7');
+INSERT INTO `SpaceOption` VALUES (249,44,9,6,'7');
+INSERT INTO `SpaceOption` VALUES (250,44,10,6,'7');
+INSERT INTO `SpaceOption` VALUES (251,44,11,6,'7');
+INSERT INTO `SpaceOption` VALUES (252,44,12,6,'7');
+INSERT INTO `SpaceOption` VALUES (253,44,13,6,'7');
+INSERT INTO `SpaceOption` VALUES (254,44,14,6,'7');
+INSERT INTO `SpaceOption` VALUES (255,44,15,6,'7');
+INSERT INTO `SpaceOption` VALUES (256,44,16,6,'7');
+INSERT INTO `SpaceOption` VALUES (257,44,17,6,'7');
+INSERT INTO `SpaceOption` VALUES (258,44,18,6,'7');
+INSERT INTO `SpaceOption` VALUES (259,44,19,6,'7');
+INSERT INTO `SpaceOption` VALUES (260,44,20,6,'7');
+INSERT INTO `SpaceOption` VALUES (261,44,21,6,'7');
+INSERT INTO `SpaceOption` VALUES (262,24,1,6,'7');
+INSERT INTO `SpaceOption` VALUES (263,24,2,6,'7');
+INSERT INTO `SpaceOption` VALUES (264,24,3,6,'7');
+INSERT INTO `SpaceOption` VALUES (265,24,4,6,'7');
+INSERT INTO `SpaceOption` VALUES (266,24,5,6,'7');
+INSERT INTO `SpaceOption` VALUES (267,24,6,6,'7');
+INSERT INTO `SpaceOption` VALUES (268,24,7,6,'7');
+INSERT INTO `SpaceOption` VALUES (269,24,8,6,'7');
+INSERT INTO `SpaceOption` VALUES (270,24,9,6,'7');
+INSERT INTO `SpaceOption` VALUES (271,24,10,6,'7');
+INSERT INTO `SpaceOption` VALUES (272,24,11,6,'7');
+INSERT INTO `SpaceOption` VALUES (273,24,12,6,'7');
+INSERT INTO `SpaceOption` VALUES (274,24,13,6,'7');
+INSERT INTO `SpaceOption` VALUES (275,24,14,6,'7');
+INSERT INTO `SpaceOption` VALUES (276,24,15,6,'7');
+INSERT INTO `SpaceOption` VALUES (277,24,16,6,'7');
+INSERT INTO `SpaceOption` VALUES (278,24,17,6,'7');
+INSERT INTO `SpaceOption` VALUES (279,24,18,6,'7');
+INSERT INTO `SpaceOption` VALUES (280,24,19,6,'7');
+INSERT INTO `SpaceOption` VALUES (281,24,20,6,'7');
+INSERT INTO `SpaceOption` VALUES (282,24,21,6,'7');
+INSERT INTO `SpaceOption` VALUES (283,25,1,6,'7');
+INSERT INTO `SpaceOption` VALUES (284,25,2,6,'7');
+INSERT INTO `SpaceOption` VALUES (285,25,3,6,'7');
+INSERT INTO `SpaceOption` VALUES (286,25,4,6,'7');
+INSERT INTO `SpaceOption` VALUES (287,25,5,6,'7');
+INSERT INTO `SpaceOption` VALUES (288,25,6,6,'7');
+INSERT INTO `SpaceOption` VALUES (289,25,7,6,'7');
+INSERT INTO `SpaceOption` VALUES (290,25,8,6,'7');
+INSERT INTO `SpaceOption` VALUES (291,25,9,6,'7');
+INSERT INTO `SpaceOption` VALUES (292,25,10,6,'7');
+INSERT INTO `SpaceOption` VALUES (293,25,11,6,'7');
+INSERT INTO `SpaceOption` VALUES (294,25,12,6,'7');
+INSERT INTO `SpaceOption` VALUES (295,25,13,6,'7');
+INSERT INTO `SpaceOption` VALUES (296,25,14,6,'7');
+INSERT INTO `SpaceOption` VALUES (297,25,15,6,'7');
+INSERT INTO `SpaceOption` VALUES (298,25,16,6,'7');
+INSERT INTO `SpaceOption` VALUES (299,25,17,6,'7');
+INSERT INTO `SpaceOption` VALUES (300,25,18,6,'7');
+INSERT INTO `SpaceOption` VALUES (301,25,19,6,'7');
+INSERT INTO `SpaceOption` VALUES (302,25,20,6,'7');
+INSERT INTO `SpaceOption` VALUES (303,25,21,6,'7');
+INSERT INTO `SpaceOption` VALUES (304,23,1,6,'7');
+INSERT INTO `SpaceOption` VALUES (305,23,2,6,'7');
+INSERT INTO `SpaceOption` VALUES (306,23,3,6,'7');
+INSERT INTO `SpaceOption` VALUES (307,23,4,6,'7');
+INSERT INTO `SpaceOption` VALUES (308,23,5,6,'7');
+INSERT INTO `SpaceOption` VALUES (309,23,6,6,'7');
+INSERT INTO `SpaceOption` VALUES (310,23,7,6,'7');
+INSERT INTO `SpaceOption` VALUES (311,23,8,6,'7');
+INSERT INTO `SpaceOption` VALUES (312,23,9,6,'7');
+INSERT INTO `SpaceOption` VALUES (313,23,10,6,'7');
+INSERT INTO `SpaceOption` VALUES (314,23,11,6,'7');
+INSERT INTO `SpaceOption` VALUES (315,23,12,6,'7');
+INSERT INTO `SpaceOption` VALUES (316,23,13,6,'7');
+INSERT INTO `SpaceOption` VALUES (317,23,14,6,'7');
+INSERT INTO `SpaceOption` VALUES (318,23,15,6,'7');
+INSERT INTO `SpaceOption` VALUES (319,23,16,6,'7');
+INSERT INTO `SpaceOption` VALUES (320,23,17,6,'7');
+INSERT INTO `SpaceOption` VALUES (321,23,18,6,'7');
+INSERT INTO `SpaceOption` VALUES (322,23,19,6,'7');
+INSERT INTO `SpaceOption` VALUES (323,23,20,6,'7');
+INSERT INTO `SpaceOption` VALUES (324,23,21,6,'7');
+INSERT INTO `SpaceOption` VALUES (325,30,1,6,'7');
+INSERT INTO `SpaceOption` VALUES (326,30,2,6,'7');
+INSERT INTO `SpaceOption` VALUES (327,30,3,6,'7');
+INSERT INTO `SpaceOption` VALUES (328,30,4,6,'7');
+INSERT INTO `SpaceOption` VALUES (329,30,5,6,'7');
+INSERT INTO `SpaceOption` VALUES (330,30,6,6,'7');
+INSERT INTO `SpaceOption` VALUES (331,30,7,6,'7');
+INSERT INTO `SpaceOption` VALUES (332,30,8,6,'7');
+INSERT INTO `SpaceOption` VALUES (333,30,9,6,'7');
+INSERT INTO `SpaceOption` VALUES (334,30,10,6,'7');
+INSERT INTO `SpaceOption` VALUES (335,30,11,6,'7');
+INSERT INTO `SpaceOption` VALUES (336,30,12,6,'7');
+INSERT INTO `SpaceOption` VALUES (337,30,13,6,'7');
+INSERT INTO `SpaceOption` VALUES (338,30,14,6,'7');
+INSERT INTO `SpaceOption` VALUES (339,30,15,6,'7');
+INSERT INTO `SpaceOption` VALUES (340,30,16,6,'7');
+INSERT INTO `SpaceOption` VALUES (341,30,17,6,'7');
+INSERT INTO `SpaceOption` VALUES (342,30,18,6,'7');
+INSERT INTO `SpaceOption` VALUES (343,30,19,6,'7');
+INSERT INTO `SpaceOption` VALUES (344,30,20,6,'7');
+INSERT INTO `SpaceOption` VALUES (345,30,21,6,'7');
+INSERT INTO `SpaceOption` VALUES (346,42,2,6,'7');
+INSERT INTO `SpaceOption` VALUES (347,42,3,6,'7');
+INSERT INTO `SpaceOption` VALUES (348,34,1,13,'7');
+INSERT INTO `SpaceOption` VALUES (349,34,2,13,'7');
+INSERT INTO `SpaceOption` VALUES (350,34,3,13,'7');
+INSERT INTO `SpaceOption` VALUES (351,34,4,13,'7');
+INSERT INTO `SpaceOption` VALUES (352,34,5,13,'7');
+INSERT INTO `SpaceOption` VALUES (353,34,6,13,'7');
+INSERT INTO `SpaceOption` VALUES (354,34,7,13,'7');
+INSERT INTO `SpaceOption` VALUES (355,34,8,13,'7');
+INSERT INTO `SpaceOption` VALUES (356,34,9,13,'7');
+INSERT INTO `SpaceOption` VALUES (357,34,10,13,'7');
+INSERT INTO `SpaceOption` VALUES (358,34,11,13,'7');
+INSERT INTO `SpaceOption` VALUES (359,34,12,13,'7');
+INSERT INTO `SpaceOption` VALUES (360,34,13,13,'7');
+INSERT INTO `SpaceOption` VALUES (361,34,14,13,'7');
+INSERT INTO `SpaceOption` VALUES (362,34,15,13,'7');
+INSERT INTO `SpaceOption` VALUES (363,34,16,13,'7');
+INSERT INTO `SpaceOption` VALUES (364,34,17,13,'7');
+INSERT INTO `SpaceOption` VALUES (365,34,18,13,'7');
+INSERT INTO `SpaceOption` VALUES (366,34,19,13,'7');
+INSERT INTO `SpaceOption` VALUES (367,34,20,13,'7');
+INSERT INTO `SpaceOption` VALUES (368,34,21,13,'7');
+INSERT INTO `SpaceOption` VALUES (369,37,1,13,'7');
+INSERT INTO `SpaceOption` VALUES (370,37,2,13,'7');
+INSERT INTO `SpaceOption` VALUES (371,37,3,13,'7');
+INSERT INTO `SpaceOption` VALUES (372,37,4,13,'7');
+INSERT INTO `SpaceOption` VALUES (373,37,5,13,'7');
+INSERT INTO `SpaceOption` VALUES (374,37,6,13,'7');
+INSERT INTO `SpaceOption` VALUES (375,37,7,13,'7');
+INSERT INTO `SpaceOption` VALUES (376,37,8,13,'7');
+INSERT INTO `SpaceOption` VALUES (377,37,9,13,'7');
+INSERT INTO `SpaceOption` VALUES (378,37,10,13,'7');
+INSERT INTO `SpaceOption` VALUES (379,37,11,13,'7');
+INSERT INTO `SpaceOption` VALUES (380,37,12,13,'7');
+INSERT INTO `SpaceOption` VALUES (381,37,13,13,'7');
+INSERT INTO `SpaceOption` VALUES (382,37,14,13,'7');
+INSERT INTO `SpaceOption` VALUES (383,37,15,13,'7');
+INSERT INTO `SpaceOption` VALUES (384,37,16,13,'7');
+INSERT INTO `SpaceOption` VALUES (385,37,17,13,'7');
+INSERT INTO `SpaceOption` VALUES (386,37,18,13,'7');
+INSERT INTO `SpaceOption` VALUES (387,37,19,13,'7');
+INSERT INTO `SpaceOption` VALUES (388,37,20,13,'7');
+INSERT INTO `SpaceOption` VALUES (389,37,21,13,'7');
+INSERT INTO `SpaceOption` VALUES (390,32,2,13,'7');
+INSERT INTO `SpaceOption` VALUES (391,36,2,13,'7');
+INSERT INTO `SpaceOption` VALUES (392,32,3,13,'7');
+INSERT INTO `SpaceOption` VALUES (393,26,3,13,'7');
+INSERT INTO `SpaceOption` VALUES (394,32,4,13,'7');
+INSERT INTO `SpaceOption` VALUES (395,36,4,13,'7');
+INSERT INTO `SpaceOption` VALUES (396,32,15,13,'7');
+INSERT INTO `SpaceOption` VALUES (397,36,15,13,'7');
+INSERT INTO `SpaceOption` VALUES (398,32,16,13,'7');
+INSERT INTO `SpaceOption` VALUES (399,36,16,13,'7');
+CREATE TABLE Space
+(
+SpaceId int NOT NULL,
+SpaceDesc varchar(255) NOT NULL,
+PRIMARY KEY (SpaceId)
+);
+INSERT INTO `Space` VALUES (1,'Living room');
+INSERT INTO `Space` VALUES (2,'Bathroom 1');
+INSERT INTO `Space` VALUES (3,'Bathroom 2');
+INSERT INTO `Space` VALUES (4,'Kitchen');
+INSERT INTO `Space` VALUES (5,'Closet 1');
+INSERT INTO `Space` VALUES (6,'Closet 2');
+INSERT INTO `Space` VALUES (7,'Closet 3');
+INSERT INTO `Space` VALUES (8,'Closet 4');
+INSERT INTO `Space` VALUES (9,'Bedroom 1');
+INSERT INTO `Space` VALUES (10,'Bedroom 2');
+INSERT INTO `Space` VALUES (11,'Bedroom 3');
+INSERT INTO `Space` VALUES (12,'Bedroom 4');
+INSERT INTO `Space` VALUES (13,'Hallway');
+INSERT INTO `Space` VALUES (14,'Foyer');
+INSERT INTO `Space` VALUES (15,'Laundry Room');
+INSERT INTO `Space` VALUES (16,'Mechanical Room');
+INSERT INTO `Space` VALUES (17,'Pantry');
+INSERT INTO `Space` VALUES (18,'Dining Room');
+INSERT INTO `Space` VALUES (19,'Rec Room');
+INSERT INTO `Space` VALUES (20,'Study');
+INSERT INTO `Space` VALUES (21,'Stair');
+CREATE TABLE "Sequences" (
+	`SequenceID`	INTEGER,
+	`SequenceDesc`	varchar(255) NOT NULL,
+	`priority`	int,
+	PRIMARY KEY(SequenceID)
+);
+INSERT INTO `Sequences` VALUES (1,'Site','');
+INSERT INTO `Sequences` VALUES (2,'Utilities','');
+INSERT INTO `Sequences` VALUES (3,'Foundation','');
+INSERT INTO `Sequences` VALUES (4,'Accessability','');
+INSERT INTO `Sequences` VALUES (5,'Exterior Surface','');
+INSERT INTO `Sequences` VALUES (6,'Interior','');
+INSERT INTO `Sequences` VALUES (7,'Equipment',NULL);
+INSERT INTO `Sequences` VALUES (8,'Testing And Inspection',NULL);
+INSERT INTO `Sequences` VALUES (9,'Administration',NULL);
+INSERT INTO `Sequences` VALUES (10,'Foundation',NULL);
+INSERT INTO `Sequences` VALUES (11,'Mechanical',NULL);
+INSERT INTO `Sequences` VALUES (12,'Exterior',NULL);
+INSERT INTO `Sequences` VALUES (13,'Equipment',NULL);
+INSERT INTO `Sequences` VALUES (14,'Site',NULL);
+INSERT INTO `Sequences` VALUES (15,'Accessibility',NULL);
+INSERT INTO `Sequences` VALUES (16,'Exterior Surfaces',NULL);
+INSERT INTO `Sequences` VALUES (17,'Exterior Surface',NULL);
+INSERT INTO `Sequences` VALUES (18,'PunchList',NULL);
+CREATE TABLE `SequencePunch` (
+	`SequencePunchID`	integer,
+	`SequenceID`	integer,
+	`PunchID`	integer,
+	PRIMARY KEY(SequencePunchID)
+);
+CREATE TABLE Report
+(
+ReportID integer,
+InspectionID varchar(255),
+ProjectID integer,
+ReportType varchar(255),
+ReportDesc VARBINARY(255),
+PRIMARY KEY(ReportID)
+);
+CREATE TABLE `PunchList` (
+	`PunchID`	INTEGER PRIMARY KEY AUTOINCREMENT,
+	`InspectionID`	varchar(255),
+	`ProjectID`	integer,
+	`PunchDesc`	varchar(255)
+);
+CREATE TABLE "OptionsTrans" (
+	`ID`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	`InspectionID`	TEXT,
+	`SequenceID`	INTEGER,
+	`LevelID`	INTEGER,
+	`SpaceID`	INTEGER,
+	`OptionId`	int NOT NULL,
+	`ProjectID`	INTEGER,
+	`Result`	varchar(255),
+	`OptionDesc`	varchar(255),
+	`comment`	varchar(255),
+	`PunchID`	INTEGER
+);
+CREATE TABLE OptionSequence
+(
+OptionSequenceID INTEGER PRIMARY KEY,
+OptionsId int,
+SequenceID int,
+FOREIGN KEY (OptionsId) REFERENCES options(OptionsId ),
+FOREIGN KEY (SequenceID) REFERENCES Sequences(SequenceID )
+);
+INSERT INTO `OptionSequence` VALUES (5,5,2);
+INSERT INTO `OptionSequence` VALUES (6,6,2);
+INSERT INTO `OptionSequence` VALUES (7,7,2);
+INSERT INTO `OptionSequence` VALUES (8,8,2);
+INSERT INTO `OptionSequence` VALUES (9,9,3);
+INSERT INTO `OptionSequence` VALUES (10,10,3);
+INSERT INTO `OptionSequence` VALUES (13,13,3);
+INSERT INTO `OptionSequence` VALUES (14,14,3);
+INSERT INTO `OptionSequence` VALUES (15,15,4);
+INSERT INTO `OptionSequence` VALUES (16,16,4);
+INSERT INTO `OptionSequence` VALUES (20,20,5);
+INSERT INTO `OptionSequence` VALUES (22,22,5);
+INSERT INTO `OptionSequence` VALUES (23,23,5);
+INSERT INTO `OptionSequence` VALUES (31,31,7);
+INSERT INTO `OptionSequence` VALUES (33,33,7);
+INSERT INTO `OptionSequence` VALUES (35,35,7);
+INSERT INTO `OptionSequence` VALUES (38,38,8);
+INSERT INTO `OptionSequence` VALUES (40,40,8);
+INSERT INTO `OptionSequence` VALUES (41,NULL,6);
+INSERT INTO `OptionSequence` VALUES (42,46,9);
+INSERT INTO `OptionSequence` VALUES (43,47,9);
+INSERT INTO `OptionSequence` VALUES (44,48,9);
+INSERT INTO `OptionSequence` VALUES (45,49,9);
+INSERT INTO `OptionSequence` VALUES (46,50,9);
+INSERT INTO `OptionSequence` VALUES (47,12,10);
+INSERT INTO `OptionSequence` VALUES (50,31,11);
+INSERT INTO `OptionSequence` VALUES (51,33,11);
+INSERT INTO `OptionSequence` VALUES (52,35,11);
+INSERT INTO `OptionSequence` VALUES (53,1,1);
+INSERT INTO `OptionSequence` VALUES (54,20,12);
+INSERT INTO `OptionSequence` VALUES (55,28,12);
+INSERT INTO `OptionSequence` VALUES (56,29,12);
+INSERT INTO `OptionSequence` VALUES (57,30,12);
+INSERT INTO `OptionSequence` VALUES (60,24,5);
+INSERT INTO `OptionSequence` VALUES (61,25,5);
+INSERT INTO `OptionSequence` VALUES (62,NULL,13);
+INSERT INTO `OptionSequence` VALUES (63,1,14);
+INSERT INTO `OptionSequence` VALUES (64,2,14);
+INSERT INTO `OptionSequence` VALUES (65,4,14);
+INSERT INTO `OptionSequence` VALUES (66,51,15);
+INSERT INTO `OptionSequence` VALUES (67,20,16);
+INSERT INTO `OptionSequence` VALUES (68,20,17);
+INSERT INTO `OptionSequence` VALUES (69,21,17);
+INSERT INTO `OptionSequence` VALUES (70,22,17);
+INSERT INTO `OptionSequence` VALUES (71,23,17);
+INSERT INTO `OptionSequence` VALUES (72,24,17);
+INSERT INTO `OptionSequence` VALUES (73,25,17);
+INSERT INTO `OptionSequence` VALUES (74,15,15);
+INSERT INTO `OptionSequence` VALUES (75,30,16);
+CREATE TABLE `LocationImage` (
+`LocationImageID` INTEGER,
+`Image` BLOB,
+`InspectionID` TEXT,
+`ProjectID` INTEGER,
+PRIMARY KEY(LocationImageID)
+);
+CREATE TABLE LevelSequence
+(
+LevelSequence INTEGER PRIMARY KEY,
+LevelID int,
+SequenceID int,
+FOREIGN KEY (LevelID) REFERENCES Level(LevelID ),
+FOREIGN KEY (SequenceID) REFERENCES Sequences(SequenceID )
+);
+INSERT INTO `LevelSequence` VALUES (1,NULL,1);
+INSERT INTO `LevelSequence` VALUES (2,NULL,2);
+INSERT INTO `LevelSequence` VALUES (3,NULL,3);
+INSERT INTO `LevelSequence` VALUES (4,NULL,4);
+INSERT INTO `LevelSequence` VALUES (5,NULL,5);
+INSERT INTO `LevelSequence` VALUES (6,1,6);
+INSERT INTO `LevelSequence` VALUES (7,2,6);
+INSERT INTO `LevelSequence` VALUES (8,3,6);
+INSERT INTO `LevelSequence` VALUES (9,4,6);
+INSERT INTO `LevelSequence` VALUES (10,NULL,7);
+INSERT INTO `LevelSequence` VALUES (11,NULL,8);
+INSERT INTO `LevelSequence` VALUES (12,NULL,9);
+INSERT INTO `LevelSequence` VALUES (13,NULL,10);
+INSERT INTO `LevelSequence` VALUES (14,NULL,11);
+INSERT INTO `LevelSequence` VALUES (15,NULL,12);
+INSERT INTO `LevelSequence` VALUES (16,1,13);
+INSERT INTO `LevelSequence` VALUES (17,2,13);
+INSERT INTO `LevelSequence` VALUES (18,3,13);
+INSERT INTO `LevelSequence` VALUES (19,4,13);
+INSERT INTO `LevelSequence` VALUES (20,NULL,14);
+INSERT INTO `LevelSequence` VALUES (21,NULL,15);
+INSERT INTO `LevelSequence` VALUES (22,NULL,16);
+INSERT INTO `LevelSequence` VALUES (23,NULL,17);
+CREATE TABLE Level
+(
+LevelID INTEGER PRIMARY KEY,
+LevelDesc varchar(100)
+);
+INSERT INTO `Level` VALUES (1,'Basement');
+INSERT INTO `Level` VALUES (2,'1st Floor');
+INSERT INTO `Level` VALUES (3,'2nd Floor ');
+INSERT INTO `Level` VALUES (4,'3rd floor');
+CREATE TABLE "InspectionTrans" (
+	`InspectionID`	varchar(100),
+	`ProjectID`	INTEGER,
+	`InspectionDT`	datetime,
+	`InspectionResult`	varchar(100),
+	`OwnerName`	varchar(100),
+	`ProjectName`	varchar(100),
+	`Pathway`	varchar(100),
+	`AddressLine1`	varchar(100),
+	`AddressLine2`	varchar(100),
+	`City`	varchar(100),
+	`Pincode`	varchar(100),
+	`ID`	INTEGER,
+	`PhoneNo`	TEXT,
+	`Image`	BLOB,
+	PRIMARY KEY(ID)
+);
+CREATE TABLE InspectionSequence
+(
+InspectionSequenceID INTEGER PRIMARY KEY,
+InspectionId int NOT NULL,
+SequenceID int,
+FOREIGN KEY (InspectionId) REFERENCES Inspection(InspectionId ),
+FOREIGN KEY (SequenceID) REFERENCES Sequences(SequenceID )
+);
+INSERT INTO `InspectionSequence` VALUES (1,2,1);
+INSERT INTO `InspectionSequence` VALUES (2,2,2);
+INSERT INTO `InspectionSequence` VALUES (3,2,3);
+INSERT INTO `InspectionSequence` VALUES (4,2,8);
+INSERT INTO `InspectionSequence` VALUES (8,3,1);
+INSERT INTO `InspectionSequence` VALUES (9,3,2);
+INSERT INTO `InspectionSequence` VALUES (10,3,10);
+INSERT INTO `InspectionSequence` VALUES (11,3,4);
+INSERT INTO `InspectionSequence` VALUES (12,3,5);
+INSERT INTO `InspectionSequence` VALUES (13,3,6);
+INSERT INTO `InspectionSequence` VALUES (14,3,11);
+INSERT INTO `InspectionSequence` VALUES (15,3,8);
+INSERT INTO `InspectionSequence` VALUES (16,5,10);
+INSERT INTO `InspectionSequence` VALUES (17,5,1);
+INSERT INTO `InspectionSequence` VALUES (19,5,17);
+INSERT INTO `InspectionSequence` VALUES (21,5,7);
+INSERT INTO `InspectionSequence` VALUES (22,5,8);
+INSERT INTO `InspectionSequence` VALUES (23,6,1);
+INSERT INTO `InspectionSequence` VALUES (24,6,10);
+INSERT INTO `InspectionSequence` VALUES (25,6,4);
+INSERT INTO `InspectionSequence` VALUES (26,6,12);
+INSERT INTO `InspectionSequence` VALUES (27,6,6);
+INSERT INTO `InspectionSequence` VALUES (28,6,13);
+INSERT INTO `InspectionSequence` VALUES (29,6,8);
+INSERT INTO `InspectionSequence` VALUES (31,7,18);
+INSERT INTO `InspectionSequence` VALUES (32,7,14);
+INSERT INTO `InspectionSequence` VALUES (33,7,15);
+INSERT INTO `InspectionSequence` VALUES (34,7,16);
+INSERT INTO `InspectionSequence` VALUES (35,7,6);
+INSERT INTO `InspectionSequence` VALUES (36,1,9);
+INSERT INTO `InspectionSequence` VALUES (37,4,3);
+INSERT INTO `InspectionSequence` VALUES (38,4,8);
+INSERT INTO `InspectionSequence` VALUES (39,7,13);
+INSERT INTO `InspectionSequence` VALUES (40,7,8);
+CREATE TABLE "Inspection" (
+	`InspectionId`	varchar(100),
+	`InspectionDesc`	varchar(100),
+	`ID`	INTEGER,
+	PRIMARY KEY(ID)
+);
+INSERT INTO `Inspection` VALUES ('1','10% Mobilization Inspection (All)	',1);
+INSERT INTO `Inspection` VALUES ('2','25% seperation & Lift',2);
+INSERT INTO `Inspection` VALUES ('3','50% Interim Progress Inspection',3);
+INSERT INTO `Inspection` VALUES ('4','50% Foundation Inspection (Elevation)(RECON)	',4);
+INSERT INTO `Inspection` VALUES ('5','75% Interim Progress Inspection',5);
+INSERT INTO `Inspection` VALUES ('6','90% Substantial Completion',6);
+INSERT INTO `Inspection` VALUES ('7','Final Inspection',7);
+CREATE TABLE "ImageTransaction" (
+	`InspectionImageID`	INTEGER,
+	`Image`	BLOB,
+	`failID`	INTEGER,
+	`OptionTransID`	INTEGER,
+	`PunchID`	INTEGER,
+	PRIMARY KEY(InspectionImageID)
+);
+CREATE TABLE "FailTransaction" (
+	`FailTransID`	INTEGER,
+	`FailID`	INTEGER,
+	`Standard`	varchar(100),
+	`OptionTransactionID`	INTEGER,
+	`Comments`	varchar(100),
+	PRIMARY KEY(FailTransID)
+);
+INSERT INTO `FailTransaction` VALUES (1,1,'asqDQE',1,'WSQWEw');
+INSERT INTO `FailTransaction` VALUES (2,2,'WQQWEQWE',2,'ewwew');
+INSERT INTO `FailTransaction` VALUES (3,1,'WQDWEWE',1,'ewe');
+INSERT INTO `FailTransaction` VALUES (4,1,'WQQWQW',1,'eww');
+INSERT INTO `FailTransaction` VALUES (5,1,'WDQWWQE',1,'edqeew');
+CREATE TABLE "FailReport" (
+	`FailCode`	varchar(255),
+	`FailItem`	varchar(255),
+	`Standard`	varchar(255),
+	`FailReportID`	INTEGER,
+	PRIMARY KEY(FailReportID)
+);
+INSERT INTO `FailReport` VALUES ('MOB-100','Contract','Homeowner, Construction Contractor or the Program have not executed the construction contract for the project',1);
+INSERT INTO `FailReport` VALUES ('MOB-200
+','Bonds','Bonds (if required) have not been submitted to the Construction Manager and have not been approved or accepted',2);
+INSERT INTO `FailReport` VALUES ('MOB-300
+','Notice to Proceed','Written Notice to proceed has not been issued to the construction contractor',3);
+INSERT INTO `FailReport` VALUES ('MOB-400
+','Relocation Plan','Homeowner and the Construction Contractor do not have a written, agreed upon plan for the expected duration that the homeowner will need to vacate the property to all construction activities to take place',4);
+INSERT INTO `FailReport` VALUES ('MOB-500
+','Utilities','Homeowner has not made coordination with the utilities companies to have any/all require utilities disconnected or they have not been shut off ',5);
+INSERT INTO `FailReport` VALUES ('SITE-100
+','Trash & Debris','Worksite is not free of trash and/or construction debris. All materials should be placed in dumpster on site and emptied on a routine basis during construction activities that are producing trash and debris.',6);
+INSERT INTO `FailReport` VALUES ('UTIL-100
+','Disconnects','All utilities (required for work) have not been properly disconnected',7);
+INSERT INTO `FailReport` VALUES ('TILE-105
+','Reconnects','All utilities (required for work) have not been properly reconnected',8);
+INSERT INTO `FailReport` VALUES ('FND-100
+','Helical Piles','Contractor has not installed the proper helical pile as specified by the designer to achieve the required capacities. Piles have not been installed to the specified depth. The minimum final installation torque has not been achieved. The proper number of piles have not been installed and arranged as per the construction drawings. The elevation of the top of the shaft/extension has not been cut off to the proper dimension and a bracket has not been installed.',9);
+INSERT INTO `FailReport` VALUES ('FND-120
+','Wood Piles','Wood piles are not generally straight and in-line. (Wood piles cannot be out of plumb more than 3/4" in 8'' or 1/8" per foot or 1% in any direction and no more than 1-1/2 inches off center with pile line. URS Standard.  Ensure piles are installed square.)',10);
+INSERT INTO `FailReport` VALUES ('FND-105
+','Wood Piers','Wood piers bow/twist/are out of plumb over ¾ inch in 8LF (per NAHB Residential Construction Performance Guidelines, 2-6-1, 3-2-2).  Piers are not installed square.  New posts are not concrete piers or treated wood posts, of a species that has a natural resistance to decay.  Only pressure treated lumber may be used for pier and beam foundations (TX-Hurricane Ike and Dolly Round 2 Min Const Standards).',11);
+INSERT INTO `FailReport` VALUES ('FND-110
+','Piers Concrete','Exposed concrete column bow in excess of 1 inch in 8 feet.  They are installed out of Plumb. In excess of 1 inch in 8 feet. (NAHB Residential Construction Performance Guidelines, 2-6-2).  Piers are not installed square.',12);
+INSERT INTO `FailReport` VALUES ('FND-115
+','Piers Masonry','Masonry columns or piers are constructed out of plumb in excess of 1 inch  in 8 feet.  (NAHB Residential Construction Performance Guidelines, 2-6-3).  Piers are not installed square.',13);
+INSERT INTO `FailReport` VALUES ('FND-200
+','Lumber Grade','Per plans and specs. Plan review for required grading has not been conducted prior to inspection.  ',14);
+INSERT INTO `FailReport` VALUES ('FND-205
+','Joist Hangars','Floor joist, sub-flooring and/or required hardware have been installed incorrectly or do not meet the DOB or the approved draining standards.',15);
+INSERT INTO `FailReport` VALUES ('FND-210
+','Hold downs and straps
+','Per plans and specs. May not be installed at this point and will need to be inspected at 33% inspection.',16);
+INSERT INTO `FailReport` VALUES ('FND-215
+','Anchor Bolts
+','Anchor bolts installed do not conform to the structural notes, specifications or the DOB Standards.',17);
+INSERT INTO `FailReport` VALUES ('FND-240
+','Termite shields, if required.
+','Shields extend over all sides on the pier.',18);
+INSERT INTO `FailReport` VALUES ('FND-245
+','Floor deck correct grade and thickness?  Is tongue and grooved decking required?  Is decking properly fastened?
+','Review specifications and structural notes for requirements. Check subfloor is even…decking has ridges or depressions more than 1/4 inch within any 32 inch measurement (per NAHB Residential Construction Performance Guidelines  3-3-2) and slopes more than ½ inch in 20LF (per NAHB Residential Construction Performance Guidelines, 3-3-3).  ',19);
+INSERT INTO `FailReport` VALUES ('FND-250
+','Floor decking
+','All sub-floors are not solid and continuous, have liberal movement or bounce, are not free from rot and deterioration',20);
+INSERT INTO `FailReport` VALUES ('FND-255
+','Framing members
+','Exceeds maximum of 1/4 inch from true position.',21);
+INSERT INTO `FailReport` VALUES ('DEMO-100
+','Utilities
+','The contractor has not properly disconnected all necessary utilities and has not capped them in a suitable manner until services are to be restored.',22);
+INSERT INTO `FailReport` VALUES ('DEMO-105
+','Confined Activities
+','All demolition activities that have been conducted are not confined to areas specified in the construction documents',23);
+INSERT INTO `FailReport` VALUES ('DEMO-110
+','Debris
+','All solid and material waste have not been removed from the site and the existing conditions do not remain in an acceptable manner',24);
+INSERT INTO `FailReport` VALUES ('DEMO-115
+','Hazards
+','There are environmental or safety hazards present that have not been addressed',25);
+INSERT INTO `FailReport` VALUES ('DEMO-125
+','Obstructions/Interferences
+','The site is not free from obstructions to roads, streets, walks and other adjacent occupied and utilized facilities',26);
+INSERT INTO `FailReport` VALUES ('DEMO-130
+','Asbestos Manifest
+','The proper DEP forms been not completed and provided by the contractor if asbestos containing materials were present in the dwelling',27);
+INSERT INTO `FailReport` VALUES ('DEMO-135
+','Demolition
+','"All  activities have not been completed for the demolition and/or removal of specified equipment and fixtures, foundation, 
+foundation walls, footings, concrete floors (including basements) porches, steps"',28);
+INSERT INTO `FailReport` VALUES ('DEMO-140
+','Damages
+','There are damages to existing roadway, sidewalk and curb areas caused by demolition work. What are they?',29);
+INSERT INTO `FailReport` VALUES ('DEMO-150
+','Trees and shrubbery
+','Trees and shrubbery have not be removed as necessary to remove the structure. Any small shrubbery bordering the structure has not been removed. Where party walls are involved the Contractor has not taken particular precautions to ensure that the work will be executed under accepted standard practices and procedures',30);
+INSERT INTO `FailReport` VALUES ('DEMO-155
+','Site neatness
+','Materials and debris have been placed or stored within the limits of any existing street',31);
+INSERT INTO `FailReport` VALUES ('Z1020.005
+','Special Inspection
+','NYC DOB Special Inspection has taken place and passed
+',32);
+INSERT INTO `FailReport` VALUES ('Z1020.010
+','NYC DOB Code Inspection
+','NYC DOB Code Inspection has taken place and passed
+',33);
+INSERT INTO `FailReport` VALUES ('Z1020.020
+','NYC DEP Inspection
+','NYC DEP Inspection has taken place and passed
+',34);
+INSERT INTO `FailReport` VALUES ('FND-400
+','Lumber Grade
+','Per plans and specs.  Plan review for required grading must be conducted prior to inspection.
+',35);
+INSERT INTO `FailReport` VALUES ('FND-405
+','Joist Hangars in-place and properly fastened?
+','Floor joists, sub-flooring, and/or hardware are not installed as per construction documents or details',36);
+INSERT INTO `FailReport` VALUES ('FND-410
+','Hold downs and straps in-place as required?
+','Hold downs and straps are not plumb or are not installed as per construction documents ',37);
+INSERT INTO `FailReport` VALUES ('FND-415
+','Bolts  
+','Bolts are not sufficiently tightened, are not the proper size, and/or are not installed as per approved details and construction documents.',38);
+INSERT INTO `FailReport` VALUES ('FND-420
+','Post/Columns
+','Verify size per plans and specifications.  Wood columns bow/twist/are out of plumb over ¾ inch in 8LF (per NAHB Residential Construction Performance Guidelines, 2-6-1, 3-2-2).  ',39);
+INSERT INTO `FailReport` VALUES ('FND-430
+','Handrail/Guardrail Heights
+','Handrails. Handrails are not provided on at least one side of each continuous run of treads or flight with four or more risers.  Height. Handrail height, measured vertically from the sloped plane adjoining the tread nosing, or finish surface of ramp slope, is less than 34 inches (864 mm) and more than 38 inches (965 mm).  Height. Required guards at open-sided walking surfaces, including stairs, porches, balconies or landings, are less than 36 inches (914 mm) high measured vertically above the adjacent walking surface, adjacent fixed seating or the line connecting the leading edges of the treads.  ',40);
+INSERT INTO `FailReport` VALUES ('FND-435
+','Baluster Spacing
+','More than 4 inches.',41);
+INSERT INTO `FailReport` VALUES ('FND-425
+','Ramps
+','Maximum slope. Ramps shall have a maximum slope of 1 unit vertical in 12 units horizontal (8.3 percent slope).  Exception: Where it is technically infeasible to comply because of site constraints, ramps may have a maximum slope of one unit vertical in eight horizontal (12.5 percent slope).  Landings required. A minimum 3-foot-by-3-foot (914 mm by 914 m) landing shall be provided: 1. At the top and bottom of ramps. 2. Where doors open onto ramps. 3. Where ramps change direction.  Handrails required. Handrails shall be provided on at least one side of all ramps exceeding a slope of one unit vertical in 12 units horizontal (8.33-percent slope). Height. Handrail height, measured above the finished surface of the ramp slope, shall be not less than 34 inches (864 mm) and not more than 38 inches (965 mm).',42);
+INSERT INTO `FailReport` VALUES ('EXTS-110
+','Siding Cracks, Dents, Chips
+','Cracked/dented or chipped siding requires replacement.
+',43);
+INSERT INTO `FailReport` VALUES ('EXTS-115
+','Siding- Level
+','Siding is out of level with contiguous course by more than 1/2 inch in a 20 foot measurement. REF: NAHB Residential Performance Guidelines',44);
+INSERT INTO `FailReport` VALUES ('EXTS-120
+','Siding- Butt joints
+','Gaps over 1/8" are considered excessive.
+',45);
+INSERT INTO `FailReport` VALUES ('EXTS-125
+','Siding- Bowing
+','Bows are unacceptable - 1/8" in 32" run. ',46);
+INSERT INTO `FailReport` VALUES ('EXTS-130
+','Exterior Trim - Butt Joints
+','Gaps over 1/8" are considered excessive.
+',47);
+INSERT INTO `FailReport` VALUES ('EXTS-135
+','Exterior Trim - Trim to siding joints
+','Gaps over 1/8" are considered excessive.
+',48);
+INSERT INTO `FailReport` VALUES ('EXTS-140
+','Exterior Trim - Level and plumb
+','Trim is not level.',49);
+INSERT INTO `FailReport` VALUES ('EXTS-145
+','Soffit 
+','Widths are not per plan and there are gaps between sheets in excess of 1/8"',50);
+INSERT INTO `FailReport` VALUES ('EXTS-150
+','Exposure
+','Check exposure to weather in accordance with the constructin documents
+',51);
+INSERT INTO `FailReport` VALUES ('EXTS-155
+','Flashing
+','Flashing has not been installed in critical areas in accordance with the construction documents',52);
+INSERT INTO `FailReport` VALUES ('ROOF-100
+','Roof Covering
+','Verify type with plans and specifications.  Roof surfaces are not smooth and free from defects. No indication of potential failure will be acceptable',53);
+INSERT INTO `FailReport` VALUES ('ROOF-105
+','Roof Covering
+','Roof is not complete and warrantable. Penetrations are not properly flashed, drip edge, pipe boots, caps, etc. are missing or improperly installed',54);
+INSERT INTO `FailReport` VALUES ('ROOF-110
+','Roof Sheathing
+','Verify requirements with structural notes/specifications.  All replaced decking is not of a type that is compatible with the existing decking thus making the roof sub-surface not smooth and free from defects  ',55);
+INSERT INTO `FailReport` VALUES ('FRM-200
+','Hurricane Clips
+','Clips are not installed as specified in the construction documents and are not properly secured in place',56);
+INSERT INTO `FailReport` VALUES ('FRM-205
+','Plywood Clips
+','Clips are not installed as specified in the construction documents and are not properly secured in place',57);
+INSERT INTO `FailReport` VALUES ('FRM-210
+','Rafter Connections
+','Rafters are not properly connected to wall plates',58);
+INSERT INTO `FailReport` VALUES ('FRM-215
+','Lookouts
+','Lookouts are not installed per construction documents',59);
+INSERT INTO `FailReport` VALUES ('FRM-220
+','Attic Access
+','Attic access is not properly sized and located',60);
+INSERT INTO `FailReport` VALUES ('FRM-105
+','General
+','Framing is not free from unacceptable irregularities such as excessive mud/mildew/knots or flaws/notching or scabbing, or overall damage.  (Note any unusual nail patterns/usage.)',61);
+INSERT INTO `FailReport` VALUES ('FRM-110
+','Location
+','Framed walls are not locacted as per the construction documents',62);
+INSERT INTO `FailReport` VALUES ('FRM-115
+','Hold Downs
+','Anchors, bolts, washers, nuts are not sufficiently tightened and/ore are not of an approved material and/or are not spaced properly',63);
+INSERT INTO `FailReport` VALUES ('FRM-120
+','Ext Walls - Studs should be plumb
+','Exceeds maximum of 1/4 inch from true position.',64);
+INSERT INTO `FailReport` VALUES ('FRM-125
+','Ext walls - Straight/Bows
+','Exceeds maximum of 1/4 inch from true position',65);
+INSERT INTO `FailReport` VALUES ('FRM-130
+','Ext Walls- Square
+','Corners are not square to within 1/8".',66);
+INSERT INTO `FailReport` VALUES ('FRM-135
+','Ext Walls-Plates
+','Stud walls do not have a double top plate to provide overlapping at corners and intersections with bearing walls. Bottom plate bolts are not tightened with washers, and tie-downs fastened. Top plate straps/tie downs are not fastened. All exterior corners do not have 3 studs. (Note: bearing studs beneath ceiling joist outer members 2”x10” or greater should be sistered.)',67);
+INSERT INTO `FailReport` VALUES ('FRM-140
+','Ext Walls -Splice
+','Check end joints of top plates…should offset at least 24” from intersecting walls.  Check where notches are cut into top plates…notches that exceed 50% of the plate width require steel straps be used to bridge the gap.  Bearing or exterior walls may be notched up to 25% of stud width or bored up to 40% of stud width (Exception: bearing wall studs may be bored up to 60% of stud width if the studs are doubled, but no more than 2 successive double studs may be bored).  Non-bearing wall studs may be notched up to 40% of stud width or bored up to 60% of stud width. In all cases, bored holes must not be closer than 5/8 inch to the edge of the stud. ',68);
+INSERT INTO `FailReport` VALUES ('FRM-145
+','Ext Walls- intermediate blocking, if required, i.e. fire blocking, exterior panel edge blocking.
+','Exterior walls do not conform to structural plans and specifications.',69);
+INSERT INTO `FailReport` VALUES ('FRM-150
+','Ext Walls- Gable vents framed for appropriate sized vents.
+','Vent sizes do not conform to plans',70);
+INSERT INTO `FailReport` VALUES ('FRM-155
+','Ceiling Heights
+','Plate heights or sizes do not conform to plans',71);
+INSERT INTO `FailReport` VALUES ('FRM-160
+','Building wrap
+','Building wrap installed does not conform to plans.',72);
+INSERT INTO `FailReport` VALUES ('FRM-165
+','Headers
+','Header location and size do not conform to plans.',73);
+INSERT INTO `FailReport` VALUES ('FRM-170
+','Sheathing
+','Installation of sheathing does not conform to plans.',74);
+INSERT INTO `FailReport` VALUES ('FRM-175
+','Window Opening
+','The rough opening is either too large, small or not square.',75);
+INSERT INTO `FailReport` VALUES ('FRM-185
+','Door Opening
+','The rough opening is either too large, small or not square.',76);
+INSERT INTO `FailReport` VALUES ('FRM-190
+','Cabinet, vanity, shower, tub rough openings
+','The rough opening will not allow for installation of fixture',77);
+INSERT INTO `FailReport` VALUES ('DW-100
+','Windows
+','Windows are not the proper size(s) and/or are not installed in the correct locations.',78);
+INSERT INTO `FailReport` VALUES ('DW-105
+','Windows
+','Verify appropriate strapping as required. Windows are not compliant with any building code or Green Building Standards',79);
+INSERT INTO `FailReport` VALUES ('DW-110
+','Windows
+','Moisture barrieris not wrapped to cover the sill and sides of the window framing.',80);
+INSERT INTO `FailReport` VALUES ('DW-115
+','Windows
+','Windows are not installed properly in the rough opening and/or are not plum, level and square. Must be operable',81);
+INSERT INTO `FailReport` VALUES ('DW-200
+','Exterior Door
+','Doors are not the proper size(s) and/or are not installed in the correct locations.',82);
+INSERT INTO `FailReport` VALUES ('DW-205
+','Exterior Door
+','Verify appropriate strapping as required. Doors are not compliant with any building code or Green Building Standards',83);
+INSERT INTO `FailReport` VALUES ('DW-210
+','Exterior Door
+','Doors are not installed properly in the rough opening and/or are not plum, level and square. Does not travel without dragging on the floor and/or does not close completely in the jam
+',84);
+INSERT INTO `FailReport` VALUES ('PLUMB-100
+','Lines
+','Plumbing lines cannot be services as installed.',85);
+INSERT INTO `FailReport` VALUES ('PLUMB-105
+','Shower/tub Fixtures
+','Placement of shower and tub fixtures are not in the proper location and/or are not oriented properly',86);
+INSERT INTO `FailReport` VALUES ('PLUMB-115
+','Shower/tub Fixtures
+','Placement of shower and tub fixtures are not in the proper location and/or are not oriented properly',87);
+INSERT INTO `FailReport` VALUES ('PLUMB-120
+','Nail Strips
+','Plumbing lines cannot be services as installed.',88);
+INSERT INTO `FailReport` VALUES ('MECH-100
+','Duct
+','Duct work is not properly sealed or supported.',89);
+INSERT INTO `FailReport` VALUES ('MECH-105
+','Equipment
+','Equipment is not placed in the proper location with proper access',90);
+INSERT INTO `FailReport` VALUES ('MECH-110
+','Condenseate Drain
+','Condensate drains are not installed and/or plugged.',91);
+INSERT INTO `FailReport` VALUES ('MECH-115
+','Exhaust Vents
+','Ducts and vents are not properly located as per construction documents',92);
+INSERT INTO `FailReport` VALUES ('ELEC-100
+','Electrical Panel
+','Panel size and or location do not confrorm to approved submission and/or construction documents.',93);
+INSERT INTO `FailReport` VALUES ('ELEC-105
+','Switches
+','Switches installed and/or location does not conform to construction documents.',94);
+INSERT INTO `FailReport` VALUES ('ELEC-110
+','Receptacles
+','Receptacles do not conform to construction documents.',95);
+INSERT INTO `FailReport` VALUES ('ELEC-115
+','Wiring
+','Electrical wiring installed does not conform to construction documents (i.e.  Wires are not copper, are not sized correctly, do not conform to P&S Division 16000 Electrical).',96);
+INSERT INTO `FailReport` VALUES ('FND-455
+','Egress Decks & Porches
+','Elevated wood decks/porches are not sufficiently braced/supported/using hangers and are not free of unacceptable irregularities such as excessive sloping, shakiness, inconsistent deck board spacing, protruding fasteners, splinters/slivers protruding from handrails, and overall poor workmanship ',97);
+INSERT INTO `FailReport` VALUES ('FND-460
+','Stairs
+','All connections to house are not properly flashed and are not secure and dimensions are not as per consturction documents. Are not free of unacceptable irregularities such as excessive sloping, shakiness, inconsistent deck board spacing, protruding fasteners, splinters/slivers protruding from handrails, and overall poor workmanship ',98);
+INSERT INTO `FailReport` VALUES ('FND-450
+','Ramp
+','Any ramp access to an elevated house or a walkway leading to a no-step entry exceeds 1:12 pitch ',99);
+INSERT INTO `FailReport` VALUES ('LIFT-100
+','Operability
+','Lift is not operable',100);
+INSERT INTO `FailReport` VALUES ('LIFT-110
+','Safety
+','Lift gates are not fastened securely.',101);
+INSERT INTO `FailReport` VALUES ('EXTS-100
+','Final Siding/Veneer Installation
+','Exterior siding is not smooth and free from gaps, cracks, rot, termite damage, holes and other areas of damage. All gaps, seams and laps are not sealed ',102);
+INSERT INTO `FailReport` VALUES ('EXTS-170
+','Exterior Finish
+','Corner boards, window & door trim, cornice, soffit and fascia are not installed tightly against the dwelling',103);
+INSERT INTO `FailReport` VALUES ('EXTS-160
+','Weatherization
+','All holes, open seams, or other incursions that result in air leaks are not properly sealed.  ',104);
+INSERT INTO `FailReport` VALUES ('EXTS-165
+','Gutters & Downspouts
+','All gutters and downspouts are not properly spaced and secured and installed properly',105);
+INSERT INTO `FailReport` VALUES ('PNT-100
+','Exterior paint
+','Exterior paint is not complete as per construction documents, minus any reasonable touch-ups due to construction progress.  Exterior wall surfaces are not free from chipped, cracking or peeling paint. All such loose paint has not been completely removed and bare wood surfaces primed. All primed surfaces are not properly painted ',106);
+INSERT INTO `FailReport` VALUES ('PNT-200
+','Interior paint
+','Interior paint is not complete as per construction documents, minus any reasonable touch-ups due to construction progress.  Wall surfaces are not free from chipped, cracking or peeling paint. All such loose paint has not been completely removed and bare wood surfaces primed. All primed surfaces are not properly painted. All nail holes have not been  filled and any cracks and defects filled to finish surface.',107);
+INSERT INTO `FailReport` VALUES ('DW-300
+','Interior Doors
+','Every interior door, when closed, does not fit well within its frame  and does not swing freely without drag and swing in the proper direction as per the construction documents. Thresholds adjusted and door stops are not installed as required.',108);
+INSERT INTO `FailReport` VALUES ('DW-305
+','Interior Doors-Accessories
+','Knobs, latches, bolts do not align with insets',109);
+INSERT INTO `FailReport` VALUES ('DW-310
+','Attic Access Door
+','Attic access door supplied does not conform to the plans and specifications.  ',110);
+INSERT INTO `FailReport` VALUES ('DW-320
+','Exterior Doors
+','Every exterior door, when closed, does not fit within its frame  and swing freely without drag and swing in the proper direction as per the construction documents. Thresholds adjusted, weather stripping and door stops are not installed as required.',111);
+INSERT INTO `FailReport` VALUES ('INTS-100
+','Drywall
+','Drywall not hung/taped/floated/textured, and is not free from excessive bowing/waving (visual cue)…framing/wall is out of plumb more than 1/4 inch per 32 inches in any direction (per NAHB Residential Construction Performance Guidelines, 4-1-1) or bows more than 1/4 inch within any 32 inch horizontal measurement or 8LF vertical measurement.  Check around all pipe stub-outs for tape and float.  Check tape/float of ceilings does not extend completely to walls. Visually inspect wall for deficiencies. If the visual inspection indicates a closer inspection is needed a level may be utilized to determine if defect is more than 1/4'' In 48"either way.  Note if ridges/bubbling/ cracking visible at taped joints.  Note if ceiling lines are not straight.    ',112);
+INSERT INTO `FailReport` VALUES ('INTS-105
+','Green Board
+','Waterproof drywall (green board) has not been installed  in moist rooms as per construction documents',113);
+INSERT INTO `FailReport` VALUES ('CAB-100
+','Kitchen Cabinets
+','Not proper dimensions, configuration, plum, level, style, color. Doors and drawers do not operate smoothly',114);
+INSERT INTO `FailReport` VALUES ('CAB-105
+','Bath Cabinets
+','Not proper dimensions, configuration, plum, level, style, color. Doors and drawers do not operate smoothly',115);
+INSERT INTO `FailReport` VALUES ('CAB-110
+','Kitchen Countertops
+','Check installation details - backsplash, edge and faucet sink layout. Countertop is not secure to cabinet, does not have tight seams and backsplash does conforms to the wall and is not properly caulked.',116);
+INSERT INTO `FailReport` VALUES ('CAB-115
+','Bath Countertops
+','Check installation details - backsplash, edge and faucet sink layout. Countertop is not secure to cabinet, does not have tight seams and backsplash does conforms to the wall and is not properly caulked.',117);
+INSERT INTO `FailReport` VALUES ('FC-100
+','Base Trim
+','All base is not matching profile. Base does not appear to be straight, a bow in the base is a visual cue drywall is bowed.',118);
+INSERT INTO `FailReport` VALUES ('FC-105
+','Door Casing
+',NULL,119);
+INSERT INTO `FailReport` VALUES ('FC-110
+','Crown Molding
+','All molding is not matching profile. Base does not appear to be straight, a bow in the base is a visual cue drywall is bowed.',120);
+INSERT INTO `FailReport` VALUES ('PLMB-150
+','Kitchen Fixtures
+','Style, type and color do not match what homowner selected from BIB Design Selection Brochure',121);
+INSERT INTO `FailReport` VALUES ('PLMB-155
+','Bath Fixtures
+','Style, type and color do not match what homowner selected from BIB Design Selection Brochure',122);
+INSERT INTO `FailReport` VALUES ('PLMB-160
+','Kitchen Faucet/fixture Operation
+','Check kitchen are free from damage during construction/installation  and are properly installed.  Check for leaks in supply and drain lines under sinks.  For all visible piping, check for evidence of leaking water at pipes, sewer waste lines, water closet flange, bathtub trap, and cleanouts.  Check for adequate water pressure, hot water service, and fixtures drain quickly.  Check toilet flushes fully, tank drains and refills quickly.  Piping must not emit excessive noise, i.e.?water hammer?, as water moves through them 
+',123);
+INSERT INTO `FailReport` VALUES ('PLMB-165
+','Bath Faucet/fixture Operation
+','Bath fixture/tub/shower are not free from damage during construction/installation and are not properly installed. Leaks exist in supply and drain lines under sinks.  For all visible piping, there is evidence of leaking water at pipes, sewer waste lines, water closet flange, bathtub trap, and/or cleanouts. There is no adequate water pressure, hot water service, and fixtures do not drain quickly. Toilet does not flush fully, tank does not drain and refill quickly.  Piping emits excessive noise, i.e.“water hammer”, as water moves through them ',124);
+INSERT INTO `FailReport` VALUES ('PLMB-170
+','Toilet Operation
+','There are drips or leaks at shut-off or connections, water does not fill properly and action does not stop automatically',125);
+INSERT INTO `FailReport` VALUES ('PLMB-175
+','Dishwasher
+','There are drips or leaks at connections or machine',126);
+INSERT INTO `FailReport` VALUES ('PLMB-180
+','Water Heater
+','There are drips or leaks at connections, equipment is not firmly set, safety relief valve is not properly installed and connected to drain line',127);
+INSERT INTO `FailReport` VALUES ('PLMB-185
+','Garbage Disposal
+','Garbage disposal does not operate properly',128);
+INSERT INTO `FailReport` VALUES ('MECH-120
+','Filters
+','Filters are clogged, dirty or do not comply with contract specifications.',129);
+INSERT INTO `FailReport` VALUES ('MECH-125
+','Air Vents and ducts
+','Air vents do not properly operate in moist rooms, clothes dryer, range hood',130);
+INSERT INTO `FailReport` VALUES ('MECH-130
+','AC Condensate Line
+','AC condensate drain is plugged and does not flow properly',131);
+INSERT INTO `FailReport` VALUES ('ELEC-150
+','Switches and Receptacles
+','The correct number and locations of receptacles and switches are not present after drywall installation, cover plates are not installed or operational',132);
+INSERT INTO `FailReport` VALUES ('ELEC-155
+','Panel Labeling
+','All panel circuits are not labled correctly',133);
+INSERT INTO `FailReport` VALUES ('ELEC-160
+','Lighting Operation
+','All installed lightingis not operational and does not have proper bulbs',134);
+INSERT INTO `FailReport` VALUES ('FLR-100
+','Carpet
+','Carpet and pad have not been installed, stretched tight, or trimmed with tight seams. ',135);
+INSERT INTO `FailReport` VALUES ('FLR-105
+','Wood 
+','Material layout and joints are not tight and trimmed, finish is not per the homeowners selection and is not free of chips, scratches or stains.',136);
+INSERT INTO `FailReport` VALUES ('FLR-110
+','Ceramic Tile
+','Tile does not have proper setting, pattern, uniform grout spaces and color. All tiles are not secure and there are cracks or chips',137);
+INSERT INTO `FailReport` VALUES ('GRD-100
+','Finish Grading
+','Finish Grade at house foundation does not provide positive drainage away from structure and does not start a minimum of 6 inches below finish floor at slab on grade or a minimum of 6 inches below pier footings for elevated floor.  Grading below elevated floor slab does not provide positive drainage away from house footprint ',138);
+INSERT INTO `FailReport` VALUES ('FLT-100
+','Flatwork
+','Driveways/walkways are not free of unacceptable irregularities such as cracks (outside of control joints) that exceed ¼ inch width or ½ inch height differential, deviations in height between adjoining sections more than ½ inch, excessive pitting/spalling, and overall poor workmanship.    All porches and steps 30" above grade do not have handrails and/or guardrails.',139);
+INSERT INTO `FailReport` VALUES ('FND-450
+','Ramp
+','Any ramp access to an elevated house or a walkway leading to a no-step entry should not exceed 1:12 pitch 
+',140);
+INSERT INTO `FailReport` VALUES ('EXTS-180
+','Siding Finish
+','There are unacceptable irregularities such as warps/pregnancies, rough-cuts, excessive gaps/offsets at butt joints, hammer rings/tool marks, excessive caulking, flaws, or overall poor workmanship.  Soffits are not adequately supported, are sagging or warped.  ',141);
+INSERT INTO `FailReport` VALUES ('DW-150
+','Windows
+','Windows are not caulked around frame and all glass is not free of unacceptable irregularities such as cracks, breaks, or broken seals that cause fogging.  Windows are not easily opened/closed, using one-arm standard.   Windows are not lockable and do not have insect screens. (per NAHB Residential Construction Performance Guidelines, Section 4 Walls, 4-Windows and Glass) ',142);
+INSERT INTO `FailReport` VALUES ('DW-250
+','Exterior Door
+','Door or frame does not seal tightly, hardware does not operate properly or is missing. Door does not meet NAHM Residential Construction Performance Guidelines, 4-5-5)',143);
+INSERT INTO `FailReport` VALUES ('DW-255
+','Exterior Door-Weatherization
+','All exterior doors are not adequately weatherproofed ',144);
+INSERT INTO `FailReport` VALUES ('DW-315
+','Interior Door
+','Door or frame does not seal tightly or easily, door hardware is incorrect as per schedule or is missing. Door stop is not installed as per contract documents or is missing.',145);
+INSERT INTO `FailReport` VALUES ('IS-100
+','Drywall installed, taped, floated, sanded and textured
+','Drywall not hung/taped/floated/textured, and is not free from excessive bowing/waving (visual cue)…framing/wall is out of plumb more than 1/4 inch per 32 inches in any direction (per NAHB Residential Construction Performance Guidelines, 4-1-1) or bows more than 1/4 inch within any 32 inch horizontal measurement or 8LF vertical measurement.  Check around all pipe stub-outs for tape and float.  Check tape/float of ceilings does not extend completely to walls. Visually inspect wall for deficiencies. If the visual inspection indicates a closer inspection is needed a level may be utilized to determine if defect is more than 1/4'' In 48"either way.  Note if ridges/bubbling/ cracking visible at taped joints.  Note if ceiling lines are not straight.       ',146);
+INSERT INTO `FailReport` VALUES ('FD-100
+','Bath Accessories
+','Accessories, i.e. grab bars, towel bars and toilet paper holders, are not properly installed/anchored.  Mirror is not properly aligned.  ',147);
+INSERT INTO `FailReport` VALUES ('PLMB-190
+','Sinks/Fixtures/Tubs/Shower
+','Check kitchen and bathroom sinks, faucets and bathtubs/showers are free from damage during construction/installation  and are properly installed.  Check for leaks in supply and drain lines under sinks.  For all visible piping, check for evidence of leaking water at pipes, sewer waste lines, water closet flange, bathtub trap, and cleanouts.  Check for adequate water pressure, hot water service, and fixtures drain quickly.  Check toilet flushes fully, tank drains and refills quickly.  Piping must not emit excessive noise, i.e.?water hammer?, as water moves through them 
+',148);
+INSERT INTO `FailReport` VALUES ('MECH-135
+','HVAC
+','System air flow is insufficient. Thermostat is not operating as per manufacturer''s specifications. Exterior unit is not installed as per code requirements (on concrete pad and elevated). Disconnect switch is not installed or is not within line of sight of unit.',149);
+INSERT INTO `FailReport` VALUES ('ELEC-165
+','Receptacles
+','Receptacles are not functional and receptacle covers are not installed straight, flush, and in good condition ',150);
+INSERT INTO `FailReport` VALUES ('ELEC-170
+','Switches
+','Switches are not functional and plates are not installed straight, flush, and in good condition.  Switches do not operate intended fixtures or receptacles.',151);
+INSERT INTO `FailReport` VALUES ('ELEC-175
+','Bath Exhaust Fan
+','Exhaust fan is not installed with GFCI circuit or is inoperable.',152);
+INSERT INTO `FailReport` VALUES ('ELEC-180
+','Ceiling Fans/Lights
+','Ceiling fans arenot  operational, and emit excessive noise or vibration.  Lighting fixtures are not in good order with switches, bulbs, lenses, shades, and all parts intact and functional.  ',153);
+INSERT INTO `FailReport` VALUES ('ELEC-190
+','Smoke/CO2 Detectors
+','Detectors are not hard wired or are installed improperly or are not properly located as per code and/or contract docuemnts.',154);
+INSERT INTO `FailReport` VALUES ('ELEC-195
+','Panel Labeling
+','All panel circuits are not labled correctly',155);
+INSERT INTO `FailReport` VALUES ('ELEC-200
+','GFCI
+','GFCI Circuits are incorrectly installed or missing. Convenience receptacles are inappropriately installed in open porches, breezways, garages, utility rooms, etc. Service receptacles are inappropriately installed within six feet of standing or running water or a water source (i.e. the tops or tubs or lavatories). Circuits are not GFCI.',156);
+INSERT INTO `FailReport` VALUES ('ELEC-205
+','Service Entrance
+','"Service disconnect is not installed at a readily accessible location (per IRC 2009 E3601.6.2).  The minimum electrical service
+for each dwelling and/or dwelling unit shall be 100 amps, or as adjusted and approved, in writing, by the electrical inspector of the city. In the absence of a city electrical inspector, the rehabilitation technician for the city/state, may make a determination that a lower service is adequate, provided that such determination is in writing with the basis for such determination included. Furthermore, lesser service shall be approved by the service provider or Sub Recipient per TX-Hurricane Ike and Dolly Round 2 Min Const Standards, March 2012, Pg. 11.."',157);
+INSERT INTO `FailReport` VALUES ('ELEC-210
+','Circuits
+','All heavy duty appliances, i.e., window air conditioners, freezers, electric stoves, washers, electric dryers, microwaves, etc., are not supplied with its own proper outlets on separate circuits.',158);
+INSERT INTO `FailReport` VALUES ('APP-100
+','Appliances
+','Refrigerator is not operational/cooling.  Cooktop and oven are not operational.  Micro-hood is not operational, and exhaust fan/light does not operate properly.  Disposal is not operational.  Dishwasher is not operational, to include drainage.  Gas range burners do not ignite quickly and do not exhibit clean blue flame.  Oven does not heat and electric range burners do not work.  ',159);
+INSERT INTO `FailReport` VALUES ('SITE-100
+','Trash & Debris
+','Worksite is not free of trash and/or construction debris.
+',160);
+INSERT INTO `FailReport` VALUES ('Z1020.025
+',NULL,NULL,161);
+INSERT INTO `FailReport` VALUES ('Z1020.005
+','Flood Zone Compliance
+','Flood Zone Compliance Inspection has not taken place and/or has not passed.
+',162);
+INSERT INTO `FailReport` VALUES ('Z1020.010
+','Concret - Cast-in-Place
+','Concrete - Cast-in-Place Inspection has not taken place and/or has not passed.
+',163);
+INSERT INTO `FailReport` VALUES ('Z1020.020
+','Soils - Site Preparation
+','Soils - Site Preparation Inspection has not taken place and/or has not passed.
+',164);
+INSERT INTO `FailReport` VALUES ('Z1020.025
+','Soils - Fill Placement & In-Place Density
+
+','Soils - Fill Placement & In-Place Density Inspection has not taken place and/or has not passed.
+',165);
+INSERT INTO `FailReport` VALUES ('Z1020.030
+','Soils - Investigations (Borings/Test Pits)
+','Soils - Investigations (Borings/Test Pits) Inspection has not taken place and/or has not passed.
+',166);
+INSERT INTO `FailReport` VALUES ('Z1020.035
+','Pile Foundations & Drilled Pier Installation
+','Pile Foundations & Drilled Pier Installation Inspection has not taken place and/or has not passed.
+',167);
+INSERT INTO `FailReport` VALUES ('Z1020.040
+','Structural Safety - Structural Stability
+','Structrual Safety - Structural Stability Inspection has not taken place and/or has not passed.
+',168);
+INSERT INTO `FailReport` VALUES ('Z1020.045
+','Mechanical Demolition
+','Mechanical Demolition Inspection has not taken place and/or has not passed.
+',169);
+INSERT INTO `FailReport` VALUES ('Z1020.050
+','Excavation - Sheeting, Shoring & Bracing
+','Excavation - Sheeting, Shoring & Bracing Inspection has not taken place and/or has not passed.
+',170);
+INSERT INTO `FailReport` VALUES ('Z1020.055
+','Raising and Moving of a Building
+','Raising and Moving of a Building Inspection has not taken place and/or has not passed.
+',171);
+INSERT INTO `FailReport` VALUES ('Z1020.060
+','Concrete Test Cylinders
+','Concrete Test Cylinders Inspection has not taken place and/or has not passed.
+',172);
+INSERT INTO `FailReport` VALUES ('Z1020.065
+','Concrete Design Mix
+','Concrete Design Mix Inspection has not taken place and/or has not passed.
+',173);
+INSERT INTO `FailReport` VALUES ('Z1020.070
+','Preliminary
+','Preliminary Inspection has not taken place and/or has not passed.
+',174);
+INSERT INTO `FailReport` VALUES ('Z1020.075
+','Footing & Foundation
+','Footing & Foundation Inspection has not taken place and/or has not passed.
+',175);
+INSERT INTO `FailReport` VALUES ('Z1020.080
+','Lowest Floor Elevation (FEMA Form)
+','Lowest Floor Elevation (FEMA Form) Inspection has not taken place and/or has not passed.
+',176);
+INSERT INTO `FailReport` VALUES ('Z1020.085
+','Frame Inspection
+','Frame Inspection has not taken place and/or has not passed.
+',177);
+INSERT INTO `FailReport` VALUES ('Z1020.090
+','Energy Code Compliance Instructions
+','Energy Code Compliance Instructions Inspection has not taken place and/or has not passed.
+',178);
+INSERT INTO `FailReport` VALUES ('Z1020.095
+','Final
+','Final Inspection has not taken place and/or has not passed.
+',179);
+INSERT INTO `FailReport` VALUES ('EXTS-100
+','Siding Finish
+','There are unacceptable irregularities such as warps/pregnancies, rough-cuts, excessive gaps/offsets at butt joints, hammer rings/tool marks, excessive caulking, flaws, or overall poor workmanship.  Soffits are not adequately supported, are sagging or warped.  
+',180);
+INSERT INTO `FailReport` VALUES ('PNT-130','Is exterior paint complete?','Exterior paint not complete as per construction documents, minus any reasonable touch-ups due to construction progress.  Exterior wall surfaces are not free from chipped, cracking or peeling paint. All such loose paint has not been completely removed and bare wood surfaces are not primed. All primed surfaces are not properly painted ',181);
+INSERT INTO `FailReport` VALUES ('PNT-150','Exterior paint','Exterior paint is not complete.',182);
+INSERT INTO `FailReport` VALUES ('PNT-250','Interior Paint','Paint coverage is not acceptable, free from flaws visible from 6 feet away (per NAHB Residential Construction Performance Guidelines, Section 10 Interior Finishes, 6-Paint, Stain, and Varnish).  Interior wall surfacesare not free from chipped, cracking or peeling paint. ',183);
+CREATE TABLE `Configuration` (
+	`ConfigurationID`	INTEGER,
+	`ConfigurationDesc`	varchar(100),
+	`ConfigurationUrl`	varchar(100),
+	`Flag`	bool,
+	PRIMARY KEY(ConfigurationID)
+);
+INSERT INTO `Configuration` VALUES (1,'UrlAuth','https://services.bklynbib.org/api/Login/AuthenticationReq',0);
+INSERT INTO `Configuration` VALUES (2,'UrlGetInspection','https://services.bklynbib.org/api/Inspection',1);
+INSERT INTO `Configuration` VALUES (3,'UrlInspectionResults','https://services.bklynbib.org/api/Inspection/InspectionResultSubmit',0);
+INSERT INTO `Configuration` VALUES (4,'UrlINspectionReport','https://services.bklynbib.org/api/Inspection/InspectionReportSubmit',1);
+INSERT INTO `Configuration` VALUES (5,NULL,NULL,NULL);
+INSERT INTO `Configuration` VALUES (6,NULL,NULL,NULL);
+COMMIT;

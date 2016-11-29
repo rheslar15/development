@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{7935C16E-66A0-4307-9E41-03D2E82293BF}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>LiRoInspect.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <StartupObject>LiRoInspect.iOS.Application</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Distribution: LiRo Engineers Inc.</CodesignKey>
+    <CodesignKey>iPhone Distribution: LiRo Engineers Inc.</CodesignKey>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <AssemblyName>LiRoInspectiOS</AssemblyName>
+    <CodesignProvision>113cff09-67e8-46c8-a503-5b496decfda6</CodesignProvision>
+    <MtouchSdkVersion></MtouchSdkVersion>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <DeviceSpecificBuild>false</DeviceSpecificBuild>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <AssemblyName>LiRoInspectiOS</AssemblyName>
+    <CodesignProvision>113cff09-67e8-46c8-a503-5b496decfda6</CodesignProvision>
+    <CodesignKey>iPhone Distribution: LiRo Engineers Inc.</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignKey>iPhone Developer: robert heslar (M8P37PJU72)</CodesignKey>
+    <CodesignKey>iPhone Developer: robert heslar (M8P37PJU72)</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchUseSGen>true</MtouchUseSGen>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <BuildIpa>true</BuildIpa>
+    <AssemblyName>BIBInspect</AssemblyName>
+    <CodesignProvision></CodesignProvision>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchSdkVersion>9.3</MtouchSdkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Distribution: LiRo Engineers Inc.</CodesignKey>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <IpaPackageName>
+    </IpaPackageName>
+    <BuildIpa>true</BuildIpa>
+    <CodesignProvision>113cff09-67e8-46c8-a503-5b496decfda6</CodesignProvision>
+    <AssemblyName>BIBInspect</AssemblyName>
+    <MtouchSdkVersion>9.3</MtouchSdkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\Ad-Hoc</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignKey>iPhone Developer: robert heslar (M8P37PJU72)</CodesignKey>
+    <IpaPackageName>
+    </IpaPackageName>
+    <CodesignProvision>71eaf759-4b2e-4843-846e-788c7dd9739c</CodesignProvision>
+    <AssemblyName>BIBInspect</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\iPhone\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>Automatic:AppStore</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <AssemblyName>BIBInspect</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <None Include="GettingStarted.Xamarin" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
+    <Compile Include="Screens\DashBoard\DashBoardLeftTableItem.cs" />
+    <Compile Include="Screens\DashBoard\DashBoardTableItemGroup.cs" />
+    <Compile Include="Screens\DashBoard\InspectionScheduleSource.cs" />
+    <Compile Include="Screens\DashBoard\DashBoardViewController.cs" />
+    <Compile Include="Screens\DashBoard\DashBoardViewController.designer.cs">
+      <DependentUpon>DashBoardViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DashBoard\DB_DetailTableSource.cs" />
+    <Compile Include="Screens\DashBoard\ProjectDetailCell.cs" />
+    <Compile Include="Screens\DashBoard\ProjectDetailCell.designer.cs">
+      <DependentUpon>ProjectDetailCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Reporting\FailReport.cs" />
+    <Compile Include="Utility\Reporting\IReportHandler.cs" />
+    <Compile Include="Utility\Reporting\PassReportType1.cs" />
+    <Compile Include="Utility\Reporting\PhotologReport.cs" />
+    <Compile Include="Utility\Reporting\ReportFactory.cs" />
+    <Compile Include="Utility\Reporting\ReportType.cs" />
+    <Compile Include="Utility\Reporting\ReportUitlity.cs" />
+    <Compile Include="Screens\LoginView\LoginViewController.cs" />
+    <Compile Include="Screens\LoginView\LoginViewController.designer.cs">
+      <DependentUpon>LoginViewController.cs</DependentUpon>
+    </Compile>
+    <None Include="PackageReference\itextsharpios.dll" />
+    <None Include="PackageReference\XamiTextSharpLGPL.iOS.dll" />
+    <Compile Include="Screens\DashBoard\DashBoardLHSContentCell.cs" />
+    <Compile Include="Screens\DashBoard\DashBoardLHSContentCell.designer.cs">
+      <DependentUpon>DashBoardLHSContentCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DashBoard\DashBoardLHSSectionCell.cs" />
+    <Compile Include="Screens\DashBoard\DashBoardLHSSectionCell.designer.cs">
+      <DependentUpon>DashBoardLHSSectionCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\InspectionView\InspectionViewController.cs" />
+    <Compile Include="Screens\InspectionView\InspectionViewController.designer.cs" />
+    <Compile Include="Screens\InspectionView\InspectionSequenceSource.cs" />
+    <Compile Include="Screens\InspectionView\InspectionSpaceSource.cs" />
+    <Compile Include="Screens\InspectionView\SpaceCell.cs" />
+    <Compile Include="Screens\InspectionView\SpaceCell.designer.cs">
+      <DependentUpon>SpaceCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ReportView\RootViewController.cs" />
+    <Compile Include="Screens\ReportView\RootViewController.designer.cs">
+      <DependentUpon>RootViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\CameraView\UICameraController.cs" />
+    <Compile Include="Screens\CameraView\UICameraController.designer.cs">
+      <DependentUpon>UICameraController.cs</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <Compile Include="Utility\LoadingOverlay.cs" />
+    <Compile Include="Screens\BaseViewController.cs" />
+    <Compile Include="Screens\BaseViewController.designer.cs">
+      <DependentUpon>BaseViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Reporting\UIDocumentInteractionControllerDelegateDerived.cs" />
+    <None Include="PackageReference\Xamarin.Mobile.dll" />
+    <Compile Include="SyncNotification.cs" />
+    <Compile Include="SyncNotification.designer.cs" />
+    <Compile Include="Utility\Reporting\ItextPageEvents.cs" />
+    <Compile Include="Screens\CameraView\CameraController.cs" />
+    <Compile Include="Screens\CameraView\CameraController.designer.cs">
+      <DependentUpon>CameraController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\InspectionView\PunchCell.cs" />
+    <Compile Include="Screens\InspectionView\PunchCell.designer.cs">
+      <DependentUpon>PunchCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\InspectionView\InspectionPunchSource.cs" />
+    <Compile Include="Screens\ImagePreview\ImagePeviewViewController.cs" />
+    <Compile Include="Screens\ImagePreview\ImagePeviewViewController.designer.cs">
+      <DependentUpon>ImagePeviewViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ConfigView\ConfigCell.cs" />
+    <Compile Include="Screens\ConfigView\ConfigCell.designer.cs">
+      <DependentUpon>ConfigCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\InspectionView\GuidedPhotoCell.cs" />
+    <Compile Include="Screens\InspectionView\GuidedPhotoCell.designer.cs">
+      <DependentUpon>GuidedPhotoCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\CameraView\ScaleAndRotateImage.cs" />
+    <Compile Include="Screens\ConfigView\DB_ConfigTableSource.cs" />
+    <Compile Include="Screens\ConfigView\config.cs" />
+    <Compile Include="Screens\ConfigView\config.designer.cs" />
+    <Compile Include="Utility\Constants.cs" />
+    <Compile Include="Screens\InspectionView\InspectionItemsSource.cs" />
+    <Compile Include="Screens\CameraView\MediaController.cs" />
+    <Compile Include="Screens\InspectionView\FinalPunchCell.cs" />
+    <Compile Include="Screens\InspectionView\FinalPunchCell.designer.cs">
+      <DependentUpon>FinalPunchCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\CameraView\CollectionViewCell.cs" />
+    <Compile Include="Screens\CameraView\CollectionViewCell.designer.cs">
+      <DependentUpon>CollectionViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\CameraView\CameraDataSource.cs" />
+    <Compile Include="Screens\DocumentViewer\DocumentController.cs" />
+    <Compile Include="Screens\DocumentViewer\DocumentController.designer.cs">
+      <DependentUpon>DocumentController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\DocumentViewer\DocumentCollectionViewCell.cs" />
+    <Compile Include="Screens\DocumentViewer\DocumentCollectionViewCell.designer.cs">
+      <DependentUpon>DocumentCollectionViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\InspectionView\BaseCell.cs" />
+    <Compile Include="Screens\InspectionView\BaseCell.designer.cs">
+      <DependentUpon>BaseCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\InspectionView\ICell.cs" />
+    <Compile Include="Screens\InspectionView\InspectionsItems.cs" />
+    <Compile Include="Screens\InspectionView\PunchCollectionViewCell.cs" />
+    <Compile Include="Screens\InspectionView\PunchCollectionViewCell.designer.cs">
+      <DependentUpon>PunchCollectionViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\InspectionView\PunchDataSource.cs" />
+    <Compile Include="notificationCell.cs" />
+    <Compile Include="notificationCell.designer.cs">
+      <DependentUpon>notificationCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Reporting\TempPhotologReport.cs" />
+    <Compile Include="Screens\InspectionDataTable\InspectionDataTableViewController.cs" />
+    <Compile Include="Screens\InspectionDataTable\InspectionDataTableViewController.designer.cs">
+      <DependentUpon>InspectionDataTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\InspectionDataTable\AppDetailsCell.cs" />
+    <Compile Include="Screens\InspectionDataTable\AppDetailsCell.designer.cs">
+      <DependentUpon>AppDetailsCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\InspectionView\ItemCell.cs" />
+    <Compile Include="Screens\InspectionView\ItemCell.designer.cs" />
+    <Compile Include="OptionsCell.cs" />
+    <Compile Include="OptionsCell.designer.cs">
+      <DependentUpon>OptionsCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIFailViewController.cs" />
+    <Compile Include="UIFailViewController.designer.cs">
+      <DependentUpon>UIFailViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\InspectionView\InspectionOptionSource.cs" />
+    <Compile Include="Screens\InspectionView\InspectionLevelSource.cs" />
+    <Compile Include="Screens\InspectionView\LevelSelectCell.cs" />
+    <Compile Include="Screens\InspectionView\LevelSelectCell.designer.cs">
+      <DependentUpon>LevelSelectCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\InspectionView\OptionsSelectCell.cs" />
+    <Compile Include="Screens\InspectionView\OptionsSelectCell.designer.cs">
+      <DependentUpon>OptionsSelectCell.cs</DependentUpon>
+    </Compile>
+    <InterfaceDefinition Include="Screens\MainStoryboard.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="itextsharpios">
+      <HintPath>PackageReference\itextsharpios.dll</HintPath>
+    </Reference>
+    <Reference Include="XamiTextSharpLGPL.iOS">
+      <HintPath>PackageReference\XamiTextSharpLGPL.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\Xamarin.iOS10\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Mobile">
+      <HintPath>PackageReference\Xamarin.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core">
+      <HintPath>..\packages\SQLitePCLRaw.core.1.0.1\lib\Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.sqlite3">
+      <HintPath>..\packages\SQLitePCLRaw.provider.sqlite3.ios_unified.1.0.1\lib\Xamarin.iOS10\SQLitePCLRaw.provider.sqlite3.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.0.1\lib\Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite-net">
+      <HintPath>..\packages\sqlite-net-pcl.1.2.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.2.2.12\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.2.2.12\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Connectivity.Plugin.Abstractions">
+      <HintPath>..\..\..\..\InspectionAppUniversal_Branded_1.5\Build11022016\Source Code\LiRoInspect.iOS\bin\iPhone\Release\Connectivity.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entitlements.plist" />
+    <BundleResource Include="Resources\Calender.png" />
+    <BundleResource Include="Resources\Discloser.png" />
+    <BundleResource Include="Resources\disclosure1.png" />
+    <BundleResource Include="Resources\FolderIcon.png" />
+    <BundleResource Include="Resources\Home.png" />
+    <BundleResource Include="Resources\LiRo_logo.png" />
+    <BundleResource Include="Resources\photo2.png" />
+    <BundleResource Include="Resources\disclosureDown.png" />
+    <BundleResource Include="Resources\LiRo_logo1.png" />
+    <BundleResource Include="Resources\Logout.png" />
+    <BundleResource Include="Resources\Sync.png" />
+    <BundleResource Include="Resources\background.jpg" />
+    <BundleResource Include="Resources\blueforwardImage.png" />
+    <BundleResource Include="Resources\Calendar.png" />
+    <BundleResource Include="Resources\forwardImage.png" />
+    <BundleResource Include="Resources\Header.png" />
+    <BundleResource Include="Resources\Check-box-Checked.png" />
+    <BundleResource Include="Resources\Check-box-Unchecked.png" />
+    <BundleResource Include="Resources\LoginBackground.png" />
+    <BundleResource Include="Resources\imageCalender.png" />
+    <BundleResource Include="Resources\imagedownward.png" />
+    <BundleResource Include="Resources\imageHome.png" />
+    <BundleResource Include="Resources\imageLiRo_logo1.png" />
+    <BundleResource Include="Resources\imageLogout.png" />
+    <BundleResource Include="Resources\imagePhoto2.png" />
+    <BundleResource Include="Resources\imageSync.png" />
+    <BundleResource Include="Resources\imgForward.png" />
+    <BundleResource Include="Resources\left-bg-1.png" />
+    <BundleResource Include="Resources\left-bg-2.png" />
+    <BundleResource Include="Resources\Logo 1.png" />
+    <BundleResource Include="Resources\logo 2.png" />
+    <BundleResource Include="Resources\blueDownward.png" />
+    <BundleResource Include="Resources\blueForward.png" />
+    <BundleResource Include="Resources\greendownward.png" />
+    <BundleResource Include="Resources\greenForward.png" />
+    <BundleResource Include="Resources\HeaderViewBackground.png" />
+    <BundleResource Include="Resources\camera.png" />
+    <BundleResource Include="Resources\Icon-72.png" />
+    <BundleResource Include="Resources\Icon-72%402x.png" />
+    <BundleResource Include="Resources\blueForwardSmall.png" />
+    <BundleResource Include="Resources\LiRoDB" />
+    <BundleResource Include="Utility\Database\LiRoDBQuery.sql" />
+    <Content Include="Utility\Database\LiRoDB" />
+    <BundleResource Include="Resources\notify.png" />
+    <BundleResource Include="Resources\Cross.png" />
+    <BundleResource Include="Resources\punch-list.png" />
+    <BundleResource Include="Resources\NC-Item.png" />
+    <BundleResource Include="Resources\pdfImage.png" />
+    <BundleResource Include="Resources\test.pdf" />
+    <BundleResource Include="Resources\doc.jpg" />
+    <BundleResource Include="Resources\ico_docs.png" />
+    <BundleResource Include="Resources\document-viewer.png" />
+    <BundleResource Include="Resources\deleteBtn.png" />
+    <BundleResource Include="Resources\view-report.png" />
+    <BundleResource Include="Resources\Icon-Small-40.png" />
+    <BundleResource Include="Resources\Icon-Small.png" />
+    <BundleResource Include="Resources\Icon-Small%402x.png" />
+    <BundleResource Include="Resources\downwardImage.png" />
+    <BundleResource Include="Resources\imageHeader.png" />
+    <BundleResource Include="Resources\logo_spotligh80x80.png" />
+    <BundleResource Include="Resources\logo_spotlight40x40.png" />
+    <BundleResource Include="Resources\LoginBackground 2.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Utility\Database\" />
+    <Folder Include="Screens\ImagePreview\" />
+    <Folder Include="Screens\ConfigView\" />
+    <Folder Include="Screens\DocumentViewer\" />
+    <Folder Include="Screens\InspectionDataTable\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BAL\BAL.csproj">
+      <Project>{5E83275E-5728-474F-9F3D-F8CFC75C6DE6}</Project>
+      <Name>BAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{4F537E39-F59F-441F-B320-ABA2ADF59317}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{54A02761-C1B9-4175-9D51-39360666BE40}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-76%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Logo_settings50x50.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Logo_settings1x1x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\logo_spotlight40x40 2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-Small-40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Logo_settings29x29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Logo_settings58x58.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Landscape.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Landscape%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\LoginBackground 2.png" />
+  </ItemGroup>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\SQLitePCL.raw_basic.0.8.6\build\Xamarin.iOS10\SQLitePCL.raw_basic.targets" Condition="Exists('..\packages\SQLitePCL.raw_basic.0.8.6\build\Xamarin.iOS10\SQLitePCL.raw_basic.targets')" />
+</Project>
